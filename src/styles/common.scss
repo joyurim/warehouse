@@ -1,3 +1,6 @@
-li {
-
+* {
+  color: $grey80;
+  font-family: 'Pretendard', 'Roboto', sans-serif;
+  font-size: pxToVw(14);
+  line-height: 1.25;
 }

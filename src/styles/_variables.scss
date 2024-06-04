@@ -1,0 +1,46 @@
+@function pxToVw($value, $base-width: 375) {
+  $vw-value: ($value / $base-width) * 100vw;
+  @return round($vw-value * 100) / 100;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('https://fonts.googleapis.com/css?family=Roboto') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$ten : #ff214f;
+$tenDown : #D62727;
+$green: #00c4bd;
+$greenDown: #04857f;
+$blueDown: #2f3167;
+$--lime: #d1ff59;
+$grey10: #f5f6f7;
+$grey20: #efefef;
+$grey30: #dfdfdf;
+$grey40: #cccccc;
+$grey50: #999999;
+$grey60: #666666;
+$grey70: #333333;
+$grey80: #181818;
+$dim90: rgba(0,0,0,0.9);
+$dim80: rgba(0,0,0,0.8);
+$dim50: rgba(0,0,0,0.5);
+$dim20: rgba(0,0,0,0.2);
+$scale4: pxToVw(4);
+$scale8: pxToVw(8);
+$scale12: pxToVw(12);
+$scale16: pxToVw(16);
+$scale32: pxToVw(32);
+$scale48: pxToVw(48);
+$scale64: pxToVw(64);
+$scale80: pxToVw(80);
+$scale100: pxToVw(100);
+$scale120: pxToVw(120);

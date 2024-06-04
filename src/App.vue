@@ -1,9 +1,7 @@
 <template>
-  <div :class="{'lg': isMobile}">
-    <ul>
-      <li>메뉴명</li>
-    </ul>
-  </div>
+  <main :class="{'lg': isMobile}">
+    <nav></nav>
+  </main>
 </template>
 
 <script>
