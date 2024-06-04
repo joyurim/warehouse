@@ -1,31 +1,30 @@
 <template>
-  <main :class="{'lg': isMobile}">
-    <nav></nav>
+  <main :class="{'web': isWebLayout}" class="mainContainer">
+    <router-view />
   </main>
 </template>
 
 <script>
-
 export default {
   name: 'App',
   components: {
   },
   data() {
     return {
-      isMobile: false
+      isWebLayout: false,
     };
   },
   methods: {
-    checkIfMobile() {
-      this.isMobile = window.innerWidth >= 750;
+    checkIfWeb() {
+      this.isWebLayout = window.innerWidth >= 750;
     }
   },
   mounted() {
-    this.checkIfMobile();
-    window.addEventListener('resize', this.checkIfMobile);
+    this.checkIfWeb();
+    window.addEventListener('resize', this.checkIfWeb);
   },
   beforeUnmount() {
-    window.removeEventListener('resize', this.checkIfMobile);
+    window.removeEventListener('resize', this.checkIfWeb);
   },
 }
 </script>
