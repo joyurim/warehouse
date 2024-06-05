@@ -2,12 +2,6 @@
   <div>ScreenDesignBook</div>
 </template>
 
-<script>
-export default {
-  name: 'ScreenDesignBook',
-  data() {
-    return {
-    };
-  },
-};
+<script setup>
+// import { ref } from 'vue';
 </script>

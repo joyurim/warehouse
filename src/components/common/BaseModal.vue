@@ -1,3 +1,16 @@
+<template>
+  <teleport to="body">
+    <Transition name="modal">
+      <div v-if="modelValue" class="modal-overlay" @click="close">
+        <div class="modal-content" @click.stop>
+          <slot></slot>
+          <button @click="close">Close</button>
+        </div>
+      </div>
+    </Transition>
+  </teleport>
+</template>
+
 <script setup>
 import { defineProps, defineEmits, toRefs } from 'vue';
 const props = defineProps({
@@ -13,19 +26,6 @@ const close = () => {
   emit('update:modelValue', false);
 };
 </script>
-
-<template>
-  <teleport to="body">
-    <Transition name="modal">
-      <div v-if="modelValue" class="modal-overlay" @click="close">
-        <div class="modal-content" @click.stop>
-          <slot></slot>
-          <button @click="close">Close</button>
-        </div>
-      </div>
-    </Transition>
-  </teleport>
-</template>
 
 <style scoped lang="scss">
 .modal-overlay {

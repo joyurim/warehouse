@@ -1,8 +1,3 @@
-<script setup>
-  import { ref } from 'vue';
-  const showModal = ref(false);
-</script>
-
 <template>
   <ul>
     <li @click="showModal = true">
@@ -17,3 +12,7 @@
   </BaseModal>
 </template>
 
+<script setup>
+import { ref } from 'vue';
+const showModal = ref(false);
+</script>

@@ -2,12 +2,6 @@
   <div>WebDesign</div>
 </template>
 
-<script>
-export default {
-  name: 'WebDesign',
-  data() {
-    return {
-    };
-  },
-};
+<script setup>
+// import { ref } from 'vue';
 </script>

@@ -5,29 +5,19 @@
   </main>
 </template>
 
-<script>
-export default {
-  name: 'App',
-  components: {
-  },
-  data() {
-    return {
-      isWebLayout: false,
-    };
-  },
-  methods: {
-    checkIfWeb() {
-      this.isWebLayout = window.innerWidth >= 750;
-    }
-  },
-  mounted() {
-    this.checkIfWeb();
-    window.addEventListener('resize', this.checkIfWeb);
-  },
-  beforeUnmount() {
-    window.removeEventListener('resize', this.checkIfWeb);
-  },
-}
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+const isWebLayout = ref(false);
+const checkIfWeb = () => {
+  isWebLayout.value = window.innerWidth >= 750;
+};
+onMounted(() => {
+  checkIfWeb();
+  window.addEventListener('resize', checkIfWeb);
+});
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkIfWeb);
+});
 </script>
 
 <style lang="scss">
