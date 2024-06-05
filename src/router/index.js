@@ -4,27 +4,27 @@ const routes = [
     {
         path: '/',
         name: 'MainHome',
-        component: () => import(/* webpackChunkName: "MainHome" */ '../views/main/index.vue'),
+        component: () => import(/* webpackChunkName: "MainHome" */ '../views/MainHome.vue'),
     },
     {
         path: '/event',
-        component: () => import(/* webpackChunkName: "EventList" */ '../views/event/index.vue'),
+        component: () => import(/* webpackChunkName: "EventList" */ '../views/EventList.vue'),
     },
     {
         path: '/10x10',
-        component: () => import(/* webpackChunkName: "TenByTen" */ '../views/10x10/index.vue'),
+        component: () => import(/* webpackChunkName: "TenByTen" */ '../views/TenByTen.vue'),
     },
     {
         path: '/screen-book',
-        component: () => import(/* webpackChunkName: "ScreenDesignBook" */ '../views/screenDesignBook/index.vue'),
+        component: () => import(/* webpackChunkName: "ScreenDesignBook" */ '../views/ScreenDesignBook.vue'),
     },
     {
         path: '/web-design',
-        component: () => import(/* webpackChunkName: "WebDesign" */ '../views/webDesign/index.vue'),
+        component: () => import(/* webpackChunkName: "WebDesign" */ '../views/WebDesign.vue'),
     },
     {
         path: '/project',
-        component: () => import(/* webpackChunkName: "ProjectList" */ '../views/projectList/index.vue'),
+        component: () => import(/* webpackChunkName: "ProjectList" */ '../views/ProjectList.vue'),
     },
 ];
 

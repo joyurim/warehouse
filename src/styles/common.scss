@@ -69,6 +69,23 @@ a {
   width: 100vw;
   height: 100svh;
   background: $grey10;
+  .quickMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: pxToVw(16);
+    bottom: pxToVw(32);
+    width: pxToVw(100);
+    height: pxToVw(100);
+    background: $blueDown;
+    border-radius: 50%;
+    color: white;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+  }
 }
 .commonNav {
   display: flex;
