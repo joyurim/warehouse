@@ -1,10 +1,17 @@
 <template>
   <teleport to="body">
     <Transition name="modal">
-      <div v-if="modelValue" class="modal-overlay" @click="close">
-        <div class="modal-content" @click.stop>
-          <slot></slot>
-          <button @click="close">Close</button>
+      <div v-if="modelValue" class="modal" @click="close">
+        <div class="modal__container" @click.stop>
+          <div class="modal__header">
+            <h1>{{ popupTitle }}</h1>
+            <button class="modal__header--close" @click="close">
+              <img src="@/assets/common/icon-close.svg" alt="팝업 닫기">
+            </button>
+          </div>
+          <div class="modal__body">
+            <slot></slot>
+          </div>
         </div>
       </div>
     </Transition>
@@ -17,6 +24,10 @@ const props = defineProps({
   modelValue: {
     type: Boolean,
     required: true
+  },
+  popupTitle: {
+    type: String,
+    default: ''
   }
 });
 const emit = defineEmits(['update:modelValue']);
@@ -28,7 +39,7 @@ const close = () => {
 </script>
 
 <style scoped lang="scss">
-.modal-overlay {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -39,15 +50,36 @@ const close = () => {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100vw;
+    height: 100svh;
+    background: white;
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: pxToVw(6) pxToVw(16) pxToVw(8);
+    border: pxToVw(1) solid $grey30;
+    h1 {
+      font-weight: 700;
+      font-size: pxToVw(18);
+      line-height: pxToVw(26);
+    }
+    &--close {
+      width: pxToVw(20);
+      height: pxToVw(20);
+    }
+  }
+  &__body {
+    flex: 1;
+    padding: pxToVw(20);
+    overflow-y: auto;
+  }
 }
-
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  position: relative;
-}
-
 .modal-enter-from .modal-container,
 .modal-leave-to .modal-container {
   transform: scale(1.1);

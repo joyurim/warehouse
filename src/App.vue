@@ -1,7 +1,7 @@
 <template>
   <main :class="{'web': isWebLayout}" class="mainContainer">
-    <router-view />
 <!--    <aside class="quickMenu">GO<br/>HOME</aside>-->
+    <router-view />
   </main>
 </template>
 

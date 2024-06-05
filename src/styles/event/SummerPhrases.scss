@@ -1,0 +1,105 @@
+.summer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: white;
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    + .summer__group-link {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.56vw 1.6vw;
+      padding: 15.46vw 7.46vw;
+      background: url("@/assets/event/SummerPhrases/summer__link--bg.jpg") repeat top left / cover;
+    }
+  }
+  .summer-item {
+    width: 100%;
+    padding: 18.4vw 6.6vw 14.26vw;
+    background: url("@/assets/event/SummerPhrases/summer__product--bg.jpg") repeat top left / cover;
+    &__thumbnail {
+      position: relative;
+      width: 86.87vw;
+      height: 103.93vw;
+      margin-bottom: 13.4vw;
+    }
+    &__mark {
+      position: absolute;
+      top: -1.06vw;
+      left: -2.39vw;
+      width: 33.26vw;
+      height: 28vw;
+      z-index: 1;
+    }
+    &__name {
+      margin-bottom: 5.86vw;
+      color: #47b4ca;
+      font: 9.06vw / 1.25 var(--weight-800);
+      letter-spacing: -0.5vw;
+    }
+    &__info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5.06vw;
+    }
+    &__org-price {
+      position: relative;
+      color: #b5b5b5;
+      font: 4.8vw / 1.5 var(--weight-600);
+      letter-spacing: -0.1vw;
+      &:before {
+        position: absolute;
+        top: 2.6vw;
+        right: -1.9vw;
+        width: 1.6vw;
+        height: 0.26vw;
+        background: #b5b5b5;
+        transform: rotate(45deg);
+      }
+      &:after {
+        position: absolute;
+        top: 3.13vw;
+        left: -0.26vw;
+        width: 17vw;
+        height: 0.26vw;
+        background: #b5b5b5;
+      }
+    }
+    &__price {
+      padding: 0 1.6vw 0 2.6vw;
+      color: #1e1e1e;
+      font: 6.66vw / 1.5 var(--weight-600);
+      letter-spacing: -0.1vw;
+      &--discount {
+        color: #47b4ca;
+        font: 5.33vw / 1.5 var(--weight-600);
+        letter-spacing: -0.1vw;
+      }
+    }
+    &__text {
+      margin-bottom: 9.33vw;
+      color: #424242;
+      font: 4.26vw / 1.5 var(--weight-400);
+      letter-spacing: -0.1vw;
+    }
+    &__buy {
+      width: 77.17vw;
+    }
+  }
+
+  .summer__swiper {
+    width: 100%;
+    height: 100%;
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
