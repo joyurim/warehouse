@@ -1,5 +1,5 @@
 <template>
-  <section v-if="shouldRender">
+  <div v-if="shouldRender">
     <div v-if="hasError" class="error">
       <div class="image-container">
         <img src="@/assets/common/img__error.svg" alt="error" />
@@ -39,8 +39,50 @@
         </div>
         <button type="button" class="btnRecentMore" @click="moveToLink(recentItem.itemId)">자세히 보기</button>
       </section>
+      <section
+        v-if="this.togetherItems.length > 0"
+        id="recommendTitleContainer"
+        class="together__container"
+      >
+        <h1 class="recommend__title">다른 고객님들이<br/>함께 본 상품이에요!
+          <span class="recommend__title--sponsored">Sponsored</span>
+        </h1>
+        <div class="together__product-container">
+          <div
+              v-for="(item, index) in togetherItems"
+              :key="index"
+              :data-item-id="item.itemid"
+              class="together__product"
+              @click="moveToLink(item)"
+          >
+            <figure class="thumbnail">
+              <img :src="item.image" :alt="item.name">
+            </figure>
+            <div>
+              <p class="brand">{{item.brandName}}</p>
+              <p class="name">{{item.name}}</p>
+              <p v-if="item.discountText" class="originPrice">{{numberFormat(item.originPrice)}}</p>
+              <p class="priceBox">
+                <span v-if="item.discountText" class="percent">{{item.discountText}}</span>
+                <span class="price">{{numberFormat(item.price)}}</span>
+              </p>
+              <div v-if="item.reviewCount" class="review">
+                <div class="reviewEval">
+                  <span class="reviewEvalSpriteRating" :style="'width:' + (item.reviewScore*20) + '%;'" />
+                </div>
+                <span class="reviewCount">
+               {{numberFormat(item.reviewCount)}}
+            </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="isLoading" class="togetherLoading">
+          <div class="loader"></div>
+        </div>
+      </section>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -74,12 +116,60 @@ export default defineComponent({
           discountAmount: 23750
         },
       },
+      currentCursor: -1,
+      isLoading: true,
+      isLastPage: false,
+      size: 20,
+      togetherItems: [],
+      isFirstLoading: true,
     }
   },
+  created() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  watch: {
+    isLoading(newLoading) {
+      if (newLoading) {
+        this.fetchItems(this.itemId);
+      }
+    },
+  },
   mounted() {
+    const itemId = this.recentItem.itemId
     this.shouldRender = true
+    this.fetchItems(itemId);
   },
   methods: {
+    async fetchItems(itemId) {
+      try {
+        const response = await fetch(`https://gateway.10x10.co.kr/v1/product/apis/product/from-ad/${itemId}/recommendations/${this.currentCursor}/${this.size}`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        });
+        if (response.ok) {
+          const json = await response.json();
+          if(json.status === 200 && json.message === 'success') {
+            this.isLastPage = json.result.results.length <= 0;
+            this.togetherItems = [...this.togetherItems, ...json.result.results];
+            this.currentCursor = json.result.cursor;
+          }
+        } else {
+          this.isLoading = false;
+        }
+        this.isLoading = false;
+      } catch (e) {
+        console.error(e)
+      }
+    },
+    handleScroll() {
+      const maxPivot = Math.max(window.scrollY, Math.ceil(window.scrollY));
+      const isAtTheBottom = maxPivot >= document.body.scrollHeight - document.body.offsetHeight;
+      if(isAtTheBottom && !this.isLastPage) {
+        this.isLoading = true;
+      }
+    },
     numberFormat(price) {
       const floorPrice = Math.floor(price);
       return floorPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -89,7 +179,10 @@ export default defineComponent({
       url = `https://m.10x10.co.kr/category/category_itemPrd.asp?itemid=${code}`;
       return location.href = url;
     },
-  }
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
 })
 </script>
 
