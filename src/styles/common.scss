@@ -14,7 +14,9 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
+  color: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
 }
 
 article, aside, details, figcaption, figure,
@@ -56,9 +58,18 @@ button {
   border: none;
 }
 
+img {
+  width: 100%;
+  object-fit: cover;
+}
+input[type = 'text'] {
+  padding-block: 0;
+  padding-inline: 0;
+}
+
 * {
   color: $grey80;
-  font-family: 'Pretendard', 'Roboto', sans-serif;
+  font-family: $weight-400;
   font-size: pxToVw(14);
   line-height: 1.25;
   #app {

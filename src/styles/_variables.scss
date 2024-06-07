@@ -3,18 +3,77 @@
   @return round($vw-value * 100) / 100;
 }
 @font-face {
-  font-family: 'Pretendard';
-  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  font-family:'CoreSansCLight';
+  font-style:normal;
+  src:local('Core Sans C 35 Light'),
+      url('@/assets/font/CoreSansC35Light.woff') format('woff'),
+      url('@/assets/font/CoreSansC35Light.ttf') format('truetype');
+}
+@font-face {
+  font-family:'CoreSansCRegular';
+  font-style:normal;
+  src:local('Core Sans C 45 Regular'),
+  url('@/assets/font/CoreSansC45Regular.woff') format('woff'),
+  url('@/assets/font/CoreSansC45Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family:'CoreSansCMedium';
+  font-style:normal;
+  src:local('Core Sans C 55 Medium'),
+  url('@/assets/font/CoreSansC55Medium.woff') format('woff'),
+  url('@/assets/font/CoreSansC55Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family:'CoreSansCBold';
+  font-style:normal;
+  src:local('Core Sans C 65 Bold'),
+  url('@/assets/font/CoreSansC65Bold.woff') format('woff'),
+  url('@/assets/font/CoreSansC65Bold.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Roboto';
-  src: url('https://fonts.googleapis.com/css?family=Roboto') format('woff');
-  font-weight: normal;
-  font-style: normal;
+@font-face{
+  font-family:'NotoSansKRLight';
+  font-style:normal;
+  src:local('Noto Sans Light'),
+  url("@/assets/font/NotoSansKR-Light.woff") format('woff'),
+  url('@/assets/font/NotoSansKR-Light.ttf') format('truetype');
 }
+@font-face{
+  font-family:'NotoSansKRRegular';
+  font-style:normal;
+  src:local('Noto Sans Regular'),
+  url("@/assets/font/NotoSansKR-Regular.woff") format('woff'),
+  url('@/assets/font/NotoSansKR-Regular.ttf') format('truetype');
+}
+@font-face{
+  font-family:'NotoSansKRMedium';
+  font-style:normal;
+  src:local('Noto Sans Medium'),
+  url("@/assets/font/NotoSansKR-Medium.woff") format('woff'),
+  url('@/assets/font/NotoSansKR-Medium.ttf') format('truetype');
+}
+@font-face{
+  font-family:'NotoSansKRSmBold';
+  font-style:normal;
+  src:local('Noto Sans SemiBold'),
+  url("@/assets/font/NotoSansKR-SemiBold.woff") format('woff'),
+  url('@/assets/font/NotoSansKR-SemiBold.ttf') format('truetype');
+}
+@font-face{
+  font-family:'NotoSansKRBold';
+  font-style:normal;
+  src:local('Noto Sans Bold'),
+  url("@/assets/font/NotoSansKR-Bold.woff") format('woff'),
+  url('@/assets/font/NotoSansKR-Bold.ttf') format('truetype');
+}
+@font-face{
+  font-family:'NotoSansKRExaBold';
+  font-style:normal;
+  src:local('Noto Sans ExtraBold'), local('NotoSans-ExtraBold'),
+  url("@/assets/font/NotoSansKR-ExtraBold.woff") format('woff'),
+  url('@/assets/font/NotoSansKR-ExtraBold.ttf') format('truetype');
+}
+
 
 $ten : #ff214f;
 $tenDown : #D62727;
@@ -34,13 +93,8 @@ $dim90: rgba(0,0,0,0.9);
 $dim80: rgba(0,0,0,0.8);
 $dim50: rgba(0,0,0,0.5);
 $dim20: rgba(0,0,0,0.2);
-$scale4: pxToVw(4);
-$scale8: pxToVw(8);
-$scale12: pxToVw(12);
-$scale16: pxToVw(16);
-$scale32: pxToVw(32);
-$scale48: pxToVw(48);
-$scale64: pxToVw(64);
-$scale80: pxToVw(80);
-$scale100: pxToVw(100);
-$scale120: pxToVw(120);
+$weight-400 : 'CoreSansCRegular', 'AppleSDGothicNeo-Medium', 'NotoSansKRRegular', sans-serif;
+$weight-500 : 'CoreSansCMedium', 'AppleSDGothicNeo-Medium', 'NotoSansKRMedium', sans-serif;
+$weight-600 : 'CoreSansCBold', 'AppleSDGothicNeo-SemiBold', 'NotoSansKRSmBold', sans-serif;
+$weight-700 : 'CoreSansCBold', 'AppleSDGothicNeo-Bold', 'NotoSansKRBold', sans-serif;
+$weight-800 : 'CoreSansCBold', 'AppleSDGothicNeo-Bold', 'NotoSansKRExaBold', sans-serif;

@@ -76,7 +76,6 @@ const close = () => {
   }
   &__body {
     flex: 1;
-    padding: pxToVw(20);
     overflow-y: auto;
   }
 }
