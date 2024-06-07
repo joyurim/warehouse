@@ -1,7 +1,7 @@
 <template>
   <ul class="event">
-    <li v-for="event in eventList" :key="event.code" class="event__list" @click="openModal(event)">
-      <p>이벤트명 : {{ event.popupTitle }}</p>
+    <li v-for="event in workList" :key="event.code" class="event__list" @click="openModal(event)">
+      <p>작업명 : {{ event.popupTitle }}</p>
       <p>작업기간 : {{ event.data }}</p>
       <p>참여도 : {{ event.participation }}</p>
     </li>
@@ -13,17 +13,25 @@
 
 <script setup>
 import { ref } from 'vue';
-import SummerPhrases from '@/components/event/SummerPhrases.vue';
-import PreOrderList from "@/components/event/PreOrderList.vue";
+import SummerPhrases from '@/components/work/SummerPhrases.vue';
+import RecommendProduct from '@/components/work/RecommendProduct.vue';
+import PreOrderList from "@/components/work/PreOrderList.vue";
 
 const showModal = ref(false);
-const eventList = ref([
+const workList = ref([
   {
     code: '127725',
     popupTitle: '여름문구, 여름의 시작',
     data: '2024.05.31 ~ 2024.06.04',
     participation: '퍼블 100%, 개발 100%',
     component: SummerPhrases,
+  },
+  {
+    code: 'recommendItem',
+    popupTitle: '사용자 추천상품',
+    data: '2024.05.31 ~ 2024.06.04',
+    participation: '퍼블 100%, 개발 100%',
+    component: RecommendProduct,
   },
   {
     code: 'preOrder',

@@ -1,0 +1,26 @@
+{
+  "code": 0,
+  "message": "success",
+  "result": {
+    "name": "마이 디어 워셔블 13mm 무지 포인트 사계절 원형 러그",
+    "brandName": "thefrigg",
+    "brandId": "thefrigg",
+    "discountText": null,
+    "image": "https://webimage.10x10.co.kr/image/basic600/454/B004549611.jpg",
+    "isCoupon": "Y",
+    "isDiscount": "N",
+    "itemId": 4549611,
+    "originPrice": 47500,
+    "price": 47500,
+    "reviewCount": 0,
+    "reviewScore": "0.00",
+    "secretCoupon": {
+      "estimatedAmount": 23750,
+      "couponId": 4090,
+      "couponName": "test 할인의 참견 시크릿 쿠폰 2",
+      "discountAmount": 23750
+    },
+    "sellStatus": null,
+    "status": 200
+  }
+}

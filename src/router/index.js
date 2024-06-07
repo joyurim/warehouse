@@ -7,8 +7,8 @@ const routes = [
         component: () => import(/* webpackChunkName: "MainHome" */ '../views/MainHome.vue'),
     },
     {
-        path: '/event',
-        component: () => import(/* webpackChunkName: "EventList" */ '../views/EventList.vue'),
+        path: '/work',
+        component: () => import(/* webpackChunkName: "WorkList" */ '../views/WorkList.vue'),
     },
     {
         path: '/10x10',

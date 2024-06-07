@@ -159,5 +159,5 @@ const scrollToComment = () => {
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/event/SummerPhrases";
+@import "@/styles/work/summerPhrases.scss";
 </style>

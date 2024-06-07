@@ -14,7 +14,7 @@
 import { ref } from 'vue';
 
 const menuList = ref([
-  { name: '이벤트 모아보기', link: '/event' },
+  { name: '텐바이텐 작업물', link: '/work' },
   { name: '텐바이텐 리뉴얼', link: '/10x10' },
   { name: 'UI 화면설계서', link: '/screen-book' },
   { name: '디자인 작업물', link: '/web-design' },
