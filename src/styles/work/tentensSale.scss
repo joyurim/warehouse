@@ -4,6 +4,7 @@
   position: relative;
   line-height: 1.5;
   background: white;
+  overflow-x: hidden;
   .tabs {
     display: flex;
     align-items: center;
@@ -439,17 +440,6 @@
     transform: translateX(-200%);
   }
 }
-.system {
-  width: 100%;
-  padding: 8vw 2.66vw 13.33vw;
-  text-align: center;
-  &__banner {
-    margin-bottom: 4vw;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
 .goods {
   position: relative;
   width: 100%;
@@ -624,7 +614,7 @@
     margin: 0 auto;
     background: radial-gradient(50% 50% at 50% 50%, #FFF 20%, rgba(255, 255, 255, 0.00) 100%);
   }
-  > img {
+  &__img {
     position: relative;
     width: 43.2vw;
     margin: 0 auto;

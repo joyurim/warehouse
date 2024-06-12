@@ -40,44 +40,29 @@ export default defineComponent({
     };
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll);
+
   },
   beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+
   },
   methods: {
-      handleScroll() {
-      clearTimeout(this.scrollTimer);
-      this.scrollTimer = setTimeout(this.changeTabs, 100);
+    handleScroll() {
+
     },
     changeTabs() {
-      const { scrollY } = window;
-      const isEventTabActive = scrollY >= this.eventOffsetTop - 50;
-      if (isEventTabActive && this.currentTab !== 'event') {
-        this.currentTab = 'event';
-      } else if (!isEventTabActive && this.currentTab !== 'special') {
-        this.currentTab = 'special';
-      }
+
     },
-    moveToSection(target) {
-      window.removeEventListener('scroll', this.handleScroll);
-      window.addEventListener('scroll', this.restoreScrollListener);
-
-      const location = document.querySelector('#' + target).offsetTop;
-      window.scrollTo({
-        top: location,
-        behavior: 'smooth'
-      });
-
-      if (target === 'event' || target === 'special') {
-        this.currentTab = target;
+    moveToSection(targetId) {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
       }
     },
     restoreScrollListener() {
       clearTimeout(this.scrollTimer);
       window.removeEventListener('scroll', this.restoreScrollListener);
       window.addEventListener('scroll', this.handleScroll);
-      this.changeTabs();
+      this.changeTabs()
     },
   },
 })
