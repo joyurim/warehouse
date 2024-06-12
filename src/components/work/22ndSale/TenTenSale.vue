@@ -2,10 +2,13 @@
   <main class="year22">
     <IntroTwentySecond />
     <BenefitComponent @moveToSection="moveToSection" />
-    <ul class="tabs">
-      <li v-for="(tab, index) in tabs" :key="index"
+    <ul ref="tabs" class="tabs" :class="{'sticky': isSticky}">
+      <li
+          v-for="(tab, index) in tabs"
+          :key="index"
           :class="{'is-active': currentTab === tab.nameEng}"
-          @click="moveToSection(tab.nameEng)">
+          @click="moveToSection(tab.nameEng)"
+      >
         {{tab.nameKo}}
       </li>
     </ul>
@@ -35,22 +38,44 @@ export default defineComponent({
         { nameKo: '혜택 이벤트', nameEng: 'event' },
       ],
       currentTab: 'special',
-      eventOffsetTop: 0,
       scrollTimer: null,
+      isSticky: false,
+      tabsOffsetTop: 0
     };
   },
   mounted() {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+    this.observer = new IntersectionObserver(this.handleScroll, options);
+    this.tabs.forEach(tab => {
+      const element = document.getElementById(tab.nameEng);
+      if (element) {
+        this.observer.observe(element);
+      }
+    });
 
+    this.$nextTick(() => {
+      this.tabsOffsetTop = this.$refs.tabs.offsetTop;
+
+      // 스크롤 이벤트 리스너 설정
+      window.addEventListener('scroll', this.checkSticky);
+    });
   },
   beforeUnmount() {
-
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+    window.removeEventListener('scroll', this.checkSticky);
   },
   methods: {
-    handleScroll() {
-
-    },
-    changeTabs() {
-
+    checkSticky() {
+      console.log('?!')
+      const tabsElement = this.$refs.tabs;
+      this.tabsOffsetTop = tabsElement.getBoundingClientRect().top + window.scrollY;
+      this.isSticky = window.scrollY >= this.tabsOffsetTop;
     },
     moveToSection(targetId) {
       const element = document.getElementById(targetId);
@@ -58,12 +83,13 @@ export default defineComponent({
         element.scrollIntoView({ behavior: 'smooth' });
       }
     },
-    restoreScrollListener() {
-      clearTimeout(this.scrollTimer);
-      window.removeEventListener('scroll', this.restoreScrollListener);
-      window.addEventListener('scroll', this.handleScroll);
-      this.changeTabs()
-    },
+    handleScroll(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.currentTab = entry.target.id;
+        }
+      });
+    }
   },
 })
 </script>
