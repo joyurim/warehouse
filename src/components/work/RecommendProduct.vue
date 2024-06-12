@@ -112,7 +112,7 @@ export default defineComponent({
         secretCoupon: {
           estimatedAmount: 23750,
           couponId: 4090,
-          couponName: "test 할인의 참견 시크릿 쿠폰 2",
+          couponName: "할인의 참견 시크릿 쿠폰",
           discountAmount: 23750
         },
       },

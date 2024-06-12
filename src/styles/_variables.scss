@@ -1,77 +1,18 @@
-@function pxToVw($value, $base-width: 375) {
-  $vw-value: ($value / $base-width) * 100vw;
-  @return round($vw-value * 100) / 100;
-}
-@font-face {
-  font-family:'CoreSansCLight';
-  font-style:normal;
-  src:local('Core Sans C 35 Light'),
-      url('@/assets/font/CoreSansC35Light.woff') format('woff'),
-      url('@/assets/font/CoreSansC35Light.ttf') format('truetype');
-}
-@font-face {
-  font-family:'CoreSansCRegular';
-  font-style:normal;
-  src:local('Core Sans C 45 Regular'),
-  url('@/assets/font/CoreSansC45Regular.woff') format('woff'),
-  url('@/assets/font/CoreSansC45Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family:'CoreSansCMedium';
-  font-style:normal;
-  src:local('Core Sans C 55 Medium'),
-  url('@/assets/font/CoreSansC55Medium.woff') format('woff'),
-  url('@/assets/font/CoreSansC55Medium.ttf') format('truetype');
-}
-@font-face {
-  font-family:'CoreSansCBold';
-  font-style:normal;
-  src:local('Core Sans C 65 Bold'),
-  url('@/assets/font/CoreSansC65Bold.woff') format('woff'),
-  url('@/assets/font/CoreSansC65Bold.ttf') format('truetype');
+$base-device-width: 375;
+// 소수점 자리수를 제한하는 함수
+@function round-to($value, $places: 2) {
+  $factor: 1;
+  @for $i from 1 through $places {
+    $factor: $factor * 10;
+  }
+  @return round($value * $factor) / $factor;
 }
 
-@font-face{
-  font-family:'NotoSansKRLight';
-  font-style:normal;
-  src:local('Noto Sans Light'),
-  url("@/assets/font/NotoSansKR-Light.woff") format('woff'),
-  url('@/assets/font/NotoSansKR-Light.ttf') format('truetype');
-}
-@font-face{
-  font-family:'NotoSansKRRegular';
-  font-style:normal;
-  src:local('Noto Sans Regular'),
-  url("@/assets/font/NotoSansKR-Regular.woff") format('woff'),
-  url('@/assets/font/NotoSansKR-Regular.ttf') format('truetype');
-}
-@font-face{
-  font-family:'NotoSansKRMedium';
-  font-style:normal;
-  src:local('Noto Sans Medium'),
-  url("@/assets/font/NotoSansKR-Medium.woff") format('woff'),
-  url('@/assets/font/NotoSansKR-Medium.ttf') format('truetype');
-}
-@font-face{
-  font-family:'NotoSansKRSmBold';
-  font-style:normal;
-  src:local('Noto Sans SemiBold'),
-  url("@/assets/font/NotoSansKR-SemiBold.woff") format('woff'),
-  url('@/assets/font/NotoSansKR-SemiBold.ttf') format('truetype');
-}
-@font-face{
-  font-family:'NotoSansKRBold';
-  font-style:normal;
-  src:local('Noto Sans Bold'),
-  url("@/assets/font/NotoSansKR-Bold.woff") format('woff'),
-  url('@/assets/font/NotoSansKR-Bold.ttf') format('truetype');
-}
-@font-face{
-  font-family:'NotoSansKRExaBold';
-  font-style:normal;
-  src:local('Noto Sans ExtraBold'), local('NotoSans-ExtraBold'),
-  url("@/assets/font/NotoSansKR-ExtraBold.woff") format('woff'),
-  url('@/assets/font/NotoSansKR-ExtraBold.ttf') format('truetype');
+// px를 vw로 변환하는 함수
+@function pxToVw($px) {
+  $vw-value: ($px / $base-device-width) * 100;
+  $rounded-vw-value: round-to($vw-value, 2);
+  @return #{$rounded-vw-value}vw;
 }
 
 
