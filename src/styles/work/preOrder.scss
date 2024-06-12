@@ -14,6 +14,7 @@
     .close {
       position: relative;
       &:before {
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -23,6 +24,7 @@
         z-index: 10;
       }
       &:after {
+        content: '';
         position: absolute;
         top: 4vw;
         left: 4vw;
@@ -106,6 +108,7 @@
     border-radius: 5.33vw;
     border-color: $grey80;
     &:after {
+      content: '';
       position: absolute;
       top: 1.7vw;
       right: 2vw;

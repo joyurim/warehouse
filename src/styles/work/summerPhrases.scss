@@ -63,6 +63,7 @@ article {
       letter-spacing: -0.1vw;
 
       &:before {
+        content: '';
         position: absolute;
         top: 2.6vw;
         right: -1.9vw;
@@ -73,6 +74,7 @@ article {
       }
 
       &:after {
+        content: '';
         position: absolute;
         top: 3.13vw;
         left: -0.26vw;
