@@ -28,6 +28,7 @@ import { ref } from 'vue';
 import SummerPhrases from '@/components/work/SummerPhrases.vue';
 import RecommendProduct from '@/components/work/RecommendProduct.vue';
 import PreOrderList from "@/components/work/PreOrderList.vue";
+import TenTenSale from "@/components/work/22ndSale/TenTenSale.vue";
 
 const showModal = ref(false);
 const workList = ref([
@@ -61,7 +62,7 @@ const workList = ref([
     popupTitle: '10x10 22주년 텐텐세일',
     data: '2023.09.16 ~ 2023.10.10',
     participation: '퍼블 100%, 개발 50%',
-    component: '',
+    component: TenTenSale,
   },
   {
     type: '이벤트',
