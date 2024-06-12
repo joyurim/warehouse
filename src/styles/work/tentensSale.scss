@@ -1,4 +1,6 @@
 .year22 {
+  display: flex;
+  flex-direction: column;
   position: relative;
   line-height: 1.5;
   background: white;
@@ -26,6 +28,8 @@
   }
 }
 .intro {
+  display: flex;
+  flex-direction: column;
   position: relative;
   background: white;
   &__left {
@@ -65,5 +69,98 @@
   }
   to {
     top: 31.73vw;
+  }
+}
+.benefit22 {
+  padding: 13.33vw 4.26vw;
+  text-align: center;
+  background: linear-gradient(180deg, #111 0%, #4B1F3A 100%);
+  &__title-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 6.66vw;
+    color: white;
+    line-height: normal;
+    text-align: center;
+    > img {
+      display: block;
+      width: 18.13vw;
+      margin-bottom: 6.66vw;
+    }
+    > p {
+      margin-bottom: 1.33vw;
+      font-family: $weight-600;
+      font-size: 4.8vw;
+    }
+  }
+  &__title {
+    font-family: $weight-500;
+    font-size: 9.33vw;
+    &--point {
+      color: #FF2DAB;
+    }
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.66vw;
+  }
+  &__list {
+    width: 44.53vw;
+    > img {
+      overflow: hidden;
+      display: inline-block;
+      height: 33.86vw;
+      background: #EDEDED;
+      border-radius: 1.33vw;
+    }
+    &--title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2.66vw 3.2vw 1.86vw 4vw;
+      color: white;
+      font-family: $weight-500;
+      font-size: 4.26vw;
+      background: #FF2DAB;
+      border-radius: 1.33vw;
+      &:after {
+        display: inline-block;
+        width: 4.53vw;
+        height: 4.53vw;
+        background: url("//webimage.10x10.co.kr/fixevent/event/2023/tentensale/22nd/m/benefit__icon-arrow.png/10x10/optimize") no-repeat center / 100%;
+      }
+    }
+  }
+}
+.hbd {
+  width: 100%;
+  padding: 8vw 0 6.66vw 7vw;
+  background: url("//webimage.10x10.co.kr/fixevent/event/2023/tentensale/22nd/m/hbd__bg.png/10x10/optimize") no-repeat left top / 100%;
+  &__title {
+    margin-bottom: 1.33vw;
+    color: white;
+    font-family: 'CoreSansCBold', 'AppleSDGothicNeo-Bold', 'NotoSansKRExaBold', sans-serif;
+    font-size: 5.6vw;
+    line-height: 120%;
+    &--color {
+      color: #FFEDAA;
+    }
+  }
+  &__more {
+    color: #FFE3F2;
+    font-family: $weight-500;
+    font-size: 3.73vw;
+    line-height: 140%;
+    background: transparent;
+    &:after {
+      display: inline-block;
+      width: 4.26vw;
+      height: 4.26vw;
+      margin-left: -1vw;
+      background: url("//webimage.10x10.co.kr/fixevent/event/2023/tentensale/22nd/m/hbd__icon-arrow.png/10x10/optimize") no-repeat center / 100%;
+      vertical-align: middle;
+    }
   }
 }
