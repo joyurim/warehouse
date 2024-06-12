@@ -1,0 +1,118 @@
+.container {
+  position: relative;
+  padding-bottom: 10.67vw;
+  &__banner {
+    margin-bottom: 8.8vw;
+  }
+}
+.preorder {
+  display: flex;
+  flex-direction: column;
+  &__img {
+    overflow: hidden;
+    min-height: 63.896vw;
+    .close {
+      position: relative;
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 10;
+      }
+      &:after {
+        position: absolute;
+        top: 4vw;
+        left: 4vw;
+        background: #fefefe;
+        padding: 1.6vw 2vw 1vw;
+        border-radius: 0.8vw;
+        color: $grey80;
+        font-size: 3.26vw;
+        font-family: $weight-800;
+        z-index: 10;
+      }
+    }
+  }
+  &__list {
+    margin-bottom: 8.53vw;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    &:nth-of-type(odd) .preorder__img {
+      margin-left: 6.4vw;
+      border-radius: 5.33vw 0 0 5.33vw;
+      .close:after {
+        content: '기간 종료';
+      }
+
+    }
+    &:nth-of-type(even) .preorder__img {
+      margin-right: 6.4vw;
+      border-radius: 0 5.33vw 5.33vw 0;
+      .close:after {
+        content: '기간 종료';
+      }
+    }
+  }
+  &__title {
+    width: 83vw;
+    margin: 4.28vw 2.13vw 2.13vw 8.53vw;
+    font-size: 5.34vw;
+    font-family: $weight-600;
+    line-height: 1.4;
+  }
+  &__benefit {
+    margin-left: 8.53vw;
+    &--discount {
+      margin-right: 1.5vw;
+      font-size: 3.73vw;
+      font-family: $weight-500;
+      line-height: 1.2;
+      color: $tenDown;
+    }
+    &--badge {
+      margin-right: 1.5vw;
+      color: #999;
+    }
+  }
+}
+.no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > img {
+    width: 26.67vw;
+    margin-bottom: 4vw;
+  }
+  &__text {
+    font-size: 5.3vw;
+    font-family: $weight-800;
+    margin-bottom: 4vw;
+  }
+  &__btn-home {
+    position: relative;
+    width: 20vw;
+    height: 8.5vw;
+    padding-left: 4vw;
+    text-align: start;
+    font-size: 3.73vw;
+    font-family: $weight-500;
+    line-height: 9.07vw;
+    color: white;
+    background-color: $grey80;
+    border-radius: 5.33vw;
+    border-color: $grey80;
+    &:after {
+      position: absolute;
+      top: 1.7vw;
+      right: 2vw;
+      width: 5vw;
+      height: 5vw;
+      background: url(http://webimage.10x10.co.kr/fixevent/event/2023/125682/pc/icon-arrow-bottom.png) no-repeat center center / 100%;
+      transform: rotate(270deg);
+    }
+  }
+}
