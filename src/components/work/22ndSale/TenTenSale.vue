@@ -13,7 +13,7 @@
       </li>
     </ul>
     <SpecialPrice id="special" />
-    <EventList22nd ref="eventList22nd" id="event" />
+    <EventList22nd ref="eventList22nd" id="eventList22nd" />
   </main>
 </template>
 
@@ -35,12 +35,13 @@ export default defineComponent({
     return {
       tabs: [
         { nameKo: '특가', nameEng: 'special' },
-        { nameKo: '혜택 이벤트', nameEng: 'event' },
+        { nameKo: '혜택 이벤트', nameEng: 'eventList22nd' },
       ],
       currentTab: 'special',
       scrollTimer: null,
       isSticky: false,
-      tabsOffsetTop: 0
+      tabsOffsetTop: 0,
+      modalBody: null
     };
   },
   mounted() {
@@ -56,26 +57,30 @@ export default defineComponent({
         this.observer.observe(element);
       }
     });
+    const modalBodyElements = document.getElementsByClassName('modal__body');
+    if (modalBodyElements.length > 0) {
+      this.modalBody = modalBodyElements[0];
+      this.modalBody.addEventListener('scroll', this.checkSticky);
 
-    this.$nextTick(() => {
-      this.tabsOffsetTop = this.$refs.tabs.offsetTop;
-
-      // 스크롤 이벤트 리스너 설정
-      window.addEventListener('scroll', this.checkSticky);
-    });
+      this.$nextTick(() => {
+        const tabsElement = this.$refs.tabs;
+        this.tabsOffsetTop = tabsElement.getBoundingClientRect().top + this.modalBody.scrollTop;
+      });
+    }
   },
   beforeUnmount() {
     if (this.observer) {
       this.observer.disconnect();
     }
-    window.removeEventListener('scroll', this.checkSticky);
+    if (this.modalBody) {
+      this.modalBody.removeEventListener('scroll', this.checkSticky);
+    }
   },
   methods: {
     checkSticky() {
-      console.log('?!')
-      const tabsElement = this.$refs.tabs;
-      this.tabsOffsetTop = tabsElement.getBoundingClientRect().top + window.scrollY;
-      this.isSticky = window.scrollY >= this.tabsOffsetTop;
+      if (!this.modalBody) return;
+      const scrollTop = this.modalBody.scrollTop;
+      this.isSticky = scrollTop >= this.tabsOffsetTop;
     },
     moveToSection(targetId) {
       const element = document.getElementById(targetId);

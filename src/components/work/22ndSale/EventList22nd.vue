@@ -128,21 +128,11 @@
       <div class="alarm__img">
         <img src="//webimage.10x10.co.kr/fixevent/event/2023/tentensale/22nd/m/alarm__img.png/10x10/optimize" alt="">
       </div>
-      <template v-if="isCheckedApp">
-        <p class="alarm__text">
-          <span class="alarm__text--point">텐바이텐의 알림을 켜두면 </span>새로운 혜택이<br/>
-          오픈될 때 가장 빠르게 알 수 있어요.<br/>
-          지금 내 알람이 켜져 있는지 확인해보세요!
-        </p>
-        <button type="button" class="btn__more"	>확인하기</button>
-      </template>
-      <template v-else>
-        <p class="alarm__text">
-          <span class="alarm__text--point">텐바이텐의 앱 설치</span>하고<br/>
-          편리하게 상품을 구경해 보세요!
-        </p>
-        <button type="button" class="btn__more"	>APP 설치하러 가기</button>
-      </template>
+      <p class="alarm__text">
+        <span class="alarm__text--point">텐바이텐의 앱 설치</span>하고<br/>
+        편리하게 상품을 구경해 보세요!
+      </p>
+      <button type="button" class="btn__more"	>APP 설치하러 가기</button>
     </article>
   </section>
 </template>

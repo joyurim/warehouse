@@ -26,7 +26,7 @@
   }
   .sticky {
     position: fixed;
-    top: 0;
+    top: pxToVw(41);
     width: 100%;
     z-index: 10;
   }
@@ -141,7 +141,7 @@
 }
 .hbd {
   width: 100%;
-  padding: 8vw 0 6.66vw 7vw;
+  padding: 8vw 0 5.66vw 7vw;
   background: url("//webimage.10x10.co.kr/fixevent/event/2023/tentensale/22nd/m/hbd__bg.png/10x10/optimize") no-repeat left top / 100%;
   &__title {
     margin-bottom: 1.33vw;
@@ -159,6 +159,7 @@
     font-size: 3.73vw;
     line-height: 140%;
     background: transparent;
+    text-align: left;
     &:after {
       content: '';
       display: inline-block;
