@@ -1,0 +1,244 @@
+.fubao {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: white;
+  h2 {
+    padding-bottom: pxToVw(6);
+    margin-bottom: pxToVw(25);
+    color: $grey70;
+    font: pxToVw(21) / 1.5 $weight-700;
+    border-bottom: 1px solid #DBDBDB;
+  }
+  &__swiper {
+    width: 100%;
+    height: pxToVw(518);
+    color: white;
+    background: black;
+  }
+  &__badge {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: pxToVw(12) pxToVw(16) pxToVw(10);
+    color: white;
+    background: $grey80;
+    &--title {
+      > span {
+        margin-right: pxToVw(4);
+        padding: pxToVw(4) pxToVw(6) pxToVw(1);
+        background: #f7ff97;
+        border-radius: pxToVw(2);
+        color: $grey80;
+        font-family: $weight-600;
+        font-size: pxToVw(13);
+      }
+    }
+    &--data {
+      display: flex;
+      align-items: center;
+      color: $grey30;
+      font-family: $weight-400;
+      font-size: pxToVw(13);
+      &::before {
+        content: '';
+        display: inline-flex;
+        width: pxToVw(16);
+        height: pxToVw(16);
+        margin-bottom: pxToVw(1);
+        margin-right: pxToVw(4);
+        background: url("//webimage.10x10.co.kr/fixevent/event/2023/124554/m/badge_calendar.png") no-repeat center center / 100%;
+      }
+    }
+  }
+  .intro {
+    width: 100%;
+    height: auto;
+    &__img {
+      position: relative;
+      background: $grey80;
+      > img {
+        overflow: hidden;
+        height: pxToVw(500);
+        border-radius: pxToVw(16) pxToVw(16) 0 0;
+      }
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 1;
+      }
+      &:before {
+        top: 0;
+        height: pxToVw(12);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.00) 100%);
+      }
+      &:after {
+        bottom: 0;
+        height: pxToVw(110);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.80) 60%, #FFF 100%);
+      }
+    }
+    &__title {
+      position: relative;
+      padding-left: pxToVw(20);
+      margin: - pxToVw(45) 0 pxToVw(12);
+      font: pxToVw(28) / pxToVw(38) $weight-800;
+      z-index: 1;
+      letter-spacing: -0.09vw;
+      > span {
+        font: inherit;
+        font-size: pxToVw(30);
+      }
+    }
+    &__sub-text {
+      padding: 0 pxToVw(20);
+      margin-bottom: pxToVw(36);
+      font: pxToVw(15) / pxToVw(23) $weight-400;
+      > strong {
+        font-family: $weight-700;
+      }
+    }
+    .count {
+      padding: 0 pxToVw(20);
+      margin-bottom: pxToVw(60);
+      &__sale {
+        color: $ten;
+        font: pxToVw(13) / pxToVw(18) $weight-500;
+        letter-spacing: -0.06vw;
+        > strong {
+          font: pxToVw(20) / pxToVw(28) $weight-600;
+          letter-spacing: -0.1vw;
+        }
+      }
+      &__number {
+        margin-bottom: pxToVw(4);
+        color: $grey70;
+        font: pxToVw(18) / pxToVw(26) $weight-600;
+        letter-spacing: -0.26vw;
+        > strong {
+          font: pxToVw(27) / pxToVw(38) $weight-700;
+        }
+      }
+      &__participate {
+        padding: pxToVw(6) pxToVw(8) pxToVw(4);
+        margin-left: pxToVw(8);
+        background: rgba(255, 210, 220, 0.40);
+        border-radius: pxToVw(4);
+        color: $ten;
+        font: pxToVw(12) / pxToVw(18) $weight-700;
+        vertical-align: super;
+      }
+      &__day {
+        margin-left: pxToVw(4);
+        color: $grey50;
+        font: pxToVw(13) / pxToVw(18) $weight-600;
+        letter-spacing: -0.06vw;
+      }
+    }
+    .schedule {
+      padding: pxToVw(21) pxToVw(14);
+      margin: 0 pxToVw(20) pxToVw(60);
+      background: rgba(245, 246, 247, 0.50);
+      border: 1px solid rgba(17, 17, 17, 0.08);
+      border-radius: pxToVw(8);
+      > p {
+        color: $grey70;
+        font: pxToVw(13) / pxToVw(18) $weight-500;
+        letter-spacing: -0.06vw;
+        &:before {
+          content: '';
+          display: inline-block;
+          width: pxToVw(16);
+          height: pxToVw(16);
+          margin-right: pxToVw(4);
+          vertical-align: text-bottom;
+        }
+      }
+      &--data:before {
+        background: url("//webimage.10x10.co.kr/fixevent/event/2023/124554/m/schedule_calendar.png") no-repeat center center / 100%;
+      }
+      &--delivery::before {
+        background: url("//webimage.10x10.co.kr/fixevent/event/2023/124554/m/schedule_delivery.png") no-repeat center center / 100%;
+      }
+    }
+    .project-team {
+      padding: 0 pxToVw(20) pxToVw(55);
+      color: #5c5c5c;
+      font: pxToVw(14) / pxToVw(21) $weight-400;
+      text-align: justify;
+    }
+  }
+  .special-goods {
+    h2 {
+      margin:0 pxToVw(20) pxToVw(36);
+    }
+  }
+  .photo-event {
+    padding: 0 pxToVw(20) pxToVw(36);
+    &__review {
+      padding-top: pxToVw(35);
+    }
+  }
+  .introduce {
+    position: relative;
+    > h2 {
+      margin: 0 pxToVw(20) pxToVw(36);
+    }
+    &__container {
+      overflow: hidden;
+      height: pxToVw(2528);
+    }
+    &__flower {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: - pxToVw(48);
+        right: 0;
+        width: pxToVw(80);
+        height: pxToVw(90);
+        background: url("//webimage.10x10.co.kr/fixevent/event/2023/124554/m/introduce_flower.png") no-repeat center center / 100%;
+      }
+    }
+    &__button {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: pxToVw(112);
+      background: linear-gradient(0deg, white 0%, rgba(255, 255, 255, 0.00) 100%);
+      z-index: 1;
+      &--more {
+        width: pxToVw(345);
+        height: pxToVw(50);
+        margin: pxToVw(36) pxToVw(15) 0;
+        background: white;
+        border: 1px solid $ten;
+        border-radius: pxToVw(2);
+        color: $ten;
+        font: pxToVw(16) / pxToVw(48) $weight-500;
+        & > img {
+          width: pxToVw(16);
+          height: pxToVw(10);
+          margin-left: pxToVw(5);
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  .is-introduce {
+    .introduce {
+      &__container {
+        overflow: inherit;
+        height: inherit;
+        padding-bottom: pxToVw(45);
+        transition: ease-in 1s;
+      }
+      &__button--more > img  {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

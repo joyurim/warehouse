@@ -29,6 +29,7 @@ import SummerPhrases from '@/components/work/SummerPhrases.vue';
 import RecommendProduct from '@/components/work/RecommendProduct.vue';
 import PreOrderList from "@/components/work/PreOrderList.vue";
 import TenTenSale from "@/components/work/22ndSale/TenTenSale.vue";
+import FubaoSeasonGreetings from "@/components/work/FubaoSeasonGreetings.vue";
 
 const showModal = ref(false);
 const workList = ref([
@@ -70,7 +71,7 @@ const workList = ref([
     popupTitle: '텐텐단독, 푸바오 시즌 그리팅',
     data: '2023.08.03 ~ 2023.08.18',
     participation: '퍼블 100%, 개발 30%',
-    component: '',
+    component: FubaoSeasonGreetings,
   },
   {
     type: '운영',
