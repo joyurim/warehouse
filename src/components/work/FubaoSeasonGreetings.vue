@@ -1,11 +1,6 @@
 
 <template>
   <section class="fubao">
-    <swiper class="fubao__swiper">
-      <swiper-slide v-for="(fubao, index) in swiperList" :key="index">
-        <img :src="fubao" alt="푸바오 시즌그리팅 구성품">
-      </swiper-slide>
-    </swiper>
     <article class="fubao__badge">
       <p class="fubao__badge--title"><span>펀딩</span> 푸바오 시즌 그리팅 단독판매</p>
       <p class="fubao__badge--data">08.21 ~ 08.31</p>
@@ -67,11 +62,20 @@
         <img src="//webimage.10x10.co.kr/fixevent/event/2023/124554/m/introduce04.jpg?v=1.2/10x10/optimize" alt="푸언니">
         <img src="//webimage.10x10.co.kr/fixevent/event/2023/124554/m/introduce05.jpg?v=1.2/10x10/optimize" alt="푸바오 시즌 그리팅 드디어 오픈">
 
-<!--        <swiper class="fubao__swiper" :options="swiperOptions">-->
-<!--          <swiper-slide v-for="(fubao, index) in swiperList" :key="index">-->
-<!--            <img :src="fubao" alt="푸바오 시즌그리팅 구성품">-->
-<!--          </swiper-slide>-->
-<!--        </swiper>-->
+        <swiper
+            :modules="modules"
+            :loop="true"
+            :autoplay="{
+              delay: 2500,
+              disableOnInteraction: false,
+            }"
+            :speed="500"
+            class="fubao__swiper"
+        >
+          <swiper-slide v-for="(fubao, index) in swiperList" :key="index">
+            <img :src="fubao" alt="푸바오 시즌그리팅 구성품">
+          </swiper-slide>
+        </swiper>
 
         <img src="//webimage.10x10.co.kr/fixevent/event/2023/124554/m/introduce07.jpg?v=1.2/10x10/optimize" alt="must have fubao">
         <img src="//webimage.10x10.co.kr/fixevent/event/2023/124554/m/introduce08.jpg?v=1.3/10x10/optimize" alt="푸바오 사인, 행복하세요">
@@ -95,6 +99,7 @@
 import {defineComponent} from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay } from 'swiper/modules';
+
 export default defineComponent({
   name: "FubaoSeasonGreetings",
   components: {
@@ -103,6 +108,7 @@ export default defineComponent({
   },
   data() {
     return {
+      modules: [Autoplay],
       projectIntroduction: false,
       swiperList: [
           '//webimage.10x10.co.kr/fixevent/event/2023/124554/m/slide01.jpg?v=1.2/10x10/optimize',
@@ -110,16 +116,6 @@ export default defineComponent({
           '//webimage.10x10.co.kr/fixevent/event/2023/124554/m/slide03.jpg?v=1.2/10x10/optimize>',
           '//webimage.10x10.co.kr/fixevent/event/2023/124554/m/slide04.jpg?v=1.2/10x10/optimize'
       ],
-      swiperOptions: {
-        // modules: [Autoplay],
-        // slidesPerView: 1,
-        // loop: true,
-        // autoplay: {
-        //   delay: 3000,
-        //   disableOnInteraction: false,
-        // },
-        // speed: 500,
-      }
     }
   }
 })

@@ -32,8 +32,12 @@
         <img src="@/assets/event/SummerPhrases/summer__product--item.jpg" alt="여름문구 세트 구성품">
       </article>
   </section>
-  <SwiperJs
-    :options="swiperOptions"
+  <swiper
+    :autoplay="{
+      delay: 2500,
+      disableOnInteraction: false,
+    }"
+    :modules="modules"
     class="summer__swiper"
   >
     <swiper-slide
@@ -43,7 +47,7 @@
     >
       <img :src="swiper" alt="여름문구 구성품">
     </swiper-slide>
-  </SwiperJs>
+  </swiper>
   <article id="commentWrite" class="comment-write">
     <div class="comment-write__box">
       올 여름은<br/>
@@ -91,71 +95,76 @@
   </aside>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-const newComment = ref('');
-const commentList = ref([]);
-const swiperList = [
-  require('@/assets/event/SummerPhrases/summer__swiper01.jpg'),
-  require('@/assets/event/SummerPhrases/summer__swiper02.jpg'),
-  require('@/assets/event/SummerPhrases/summer__swiper03.jpg'),
-  require('@/assets/event/SummerPhrases/summer__swiper04.jpg'),
-];
-const swiperOptions = ref({
-  loop: true,
-  loopedSlides: 1,
-  autoplay: {
-    delay: 2000,
-    disableOnInteraction: false,
+<script>
+import {defineComponent} from 'vue'
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay } from 'swiper/modules';
+export default defineComponent({
+  name: 'SummerPhrases',
+  components: {
+    Swiper,
+    SwiperSlide
   },
-});
-
-const numberFormat = (price) => {
-  const floorPrice = Math.floor(price);
-  return floorPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-};
-const moveToLink = (code, type) => {
-  let url = '';
-  switch (type) {
-    case 'item':
-      url = `https://m.10x10.co.kr/category/category_itemPrd.asp?itemid=${code}`;
-      break;
-    case 'event':
-      url = `https://m.10x10.co.kr/event/eventmain.asp?eventid=${code}`;
-      break;
-    default:
-      console.error('Unsupported type:', type);
+  data() {
+    return {
+      newComment: '',
+      commentList: [],
+      modules: [Autoplay],
+      swiperList: [
+        require('@/assets/event/SummerPhrases/summer__swiper01.jpg'),
+        require('@/assets/event/SummerPhrases/summer__swiper02.jpg'),
+        require('@/assets/event/SummerPhrases/summer__swiper03.jpg'),
+        require('@/assets/event/SummerPhrases/summer__swiper04.jpg'),
+      ]
+    }
+  },
+  methods: {
+    numberFormat(price) {
+      const floorPrice = Math.floor(price);
+      return floorPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
+    moveToLink(code, type) {
+      let url = '';
+      switch (type) {
+        case 'item':
+          url = `https://m.10x10.co.kr/category/category_itemPrd.asp?itemid=${code}`;
+          break;
+        case 'event':
+          url = `https://m.10x10.co.kr/event/eventmain.asp?eventid=${code}`;
+          break;
+        default:
+          console.error('Unsupported type:', type);
+      }
+      return location.href = url;
+    },
+    addComment() {
+      if (this.newComment.value > 0) {
+        this.commentList.value.push(
+            {
+              comment: this.newComment.value,
+              idx: this.commentList.value.length,
+              useridMasked: 'SomeUser'
+            }
+        );
+        this.newComment.value = '';
+      } else  {
+        alert('내용을 입력해주세요.')
+      }
+    },
+    deleteComment(idx) {
+      const index = this.commentList.value.findIndex(comment => comment.idx === idx);
+      if (index !== -1) {
+        this.commentList.value.splice(index, 1);
+      }
+    },
+    scrollToComment() {
+      const commentSection = document.getElementById('commentWrite');
+      if (commentSection) {
+        commentSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   }
-  return location.href = url;
-}
-
-const addComment = () => {
-  if (newComment.value > 0) {
-    commentList.value.push(
-        {
-          comment: newComment.value,
-          idx: commentList.value.length,
-          useridMasked: 'SomeUser'
-        }
-    );
-    newComment.value = '';
-  } else  {
-    alert('내용을 입력해주세요.')
-  }
-};
-
-const deleteComment = (idx) => {
-  const index = commentList.value.findIndex(comment => comment.idx === idx);
-  if (index !== -1) {
-    commentList.value.splice(index, 1);
-  }
-};
-const scrollToComment = () => {
-  const commentSection = document.getElementById('commentWrite');
-  if (commentSection) {
-    commentSection.scrollIntoView({ behavior: 'smooth' });
-  }
-}
+})
 </script>
 
 <style scoped lang="scss">
