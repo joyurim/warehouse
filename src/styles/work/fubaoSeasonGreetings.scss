@@ -102,7 +102,7 @@
     }
     .count {
       padding: 0 pxToVw(20);
-      margin-bottom: pxToVw(60);
+      margin-bottom: pxToVw(36);
       &__sale {
         color: $ten;
         font: pxToVw(13) / pxToVw(18) $weight-500;
@@ -139,7 +139,7 @@
     }
     .schedule {
       padding: pxToVw(21) pxToVw(14);
-      margin: 0 pxToVw(20) pxToVw(60);
+      margin: 0 pxToVw(20) pxToVw(36);
       background: rgba(245, 246, 247, 0.50);
       border: 1px solid rgba(17, 17, 17, 0.08);
       border-radius: pxToVw(8);

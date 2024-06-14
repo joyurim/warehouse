@@ -20,10 +20,10 @@
         <strong>시즌 그리팅</strong>을 오직 텐바이텐에서 만나보세요!
       </div>
       <div class="count">
-          <p class="count__sale"><strong>1,555</strong>개 판매중</p>
+          <p class="count__sale"><strong>{{ totalQuantity.toLocaleString() }}</strong>개 판매중</p>
           <p class="count__number">
-              <strong>10,000</strong>원 달성
-              <span class="count__participate">255명 참여</span>
+              <strong>{{ updateCounting.toLocaleString() }}</strong>원 달성
+              <span class="count__participate">{{ totalOrderUser.toLocaleString() }}명 참여</span>
           </p>
           <p class="count__day">남은시간 5일</p>
       </div>
@@ -108,6 +108,9 @@ export default defineComponent({
   },
   data() {
     return {
+      totalQuantity: 1640,
+      updateCounting: 85260000,
+      totalOrderUser: 1540,
       modules: [Autoplay],
       projectIntroduction: false,
       swiperList: [
@@ -117,6 +120,10 @@ export default defineComponent({
           '//webimage.10x10.co.kr/fixevent/event/2023/124554/m/slide04.jpg?v=1.2/10x10/optimize'
       ],
     }
+  },
+  mounted() {
+  },
+  methods: {
   }
 })
 </script>
