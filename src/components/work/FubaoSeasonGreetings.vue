@@ -1,7 +1,7 @@
 
 <template>
   <section class="fubao">
-    <swiper class="fubao__swiper">
+    <swiper class="fubao__swiper" :autoplay="autoplay">
       <swiper-slide v-for="(fubao, index) in swiperList" :key="index">
         <img :src="fubao" alt="푸바오 시즌그리팅 구성품">
       </swiper-slide>
@@ -92,9 +92,13 @@
 </template>
 
 <script>
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import SwiperCore from 'swiper/core';
 import { Autoplay } from 'swiper/modules';
+
+SwiperCore.use([Autoplay]);
+
 export default defineComponent({
   name: "FubaoSeasonGreetings",
   components: {
@@ -110,16 +114,10 @@ export default defineComponent({
           '//webimage.10x10.co.kr/fixevent/event/2023/124554/m/slide03.jpg?v=1.2/10x10/optimize>',
           '//webimage.10x10.co.kr/fixevent/event/2023/124554/m/slide04.jpg?v=1.2/10x10/optimize'
       ],
-      swiperOptions: {
-        // modules: [Autoplay],
-        // slidesPerView: 1,
-        // loop: true,
-        // autoplay: {
-        //   delay: 3000,
-        //   disableOnInteraction: false,
-        // },
-        // speed: 500,
-      }
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false
+      },
     }
   }
 })
