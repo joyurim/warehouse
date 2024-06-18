@@ -241,4 +241,151 @@
       }
     }
   }
+  .product {
+    padding: 15.73vw  6.4vw 8.27vw;
+    .thumbnail {
+      position: relative;
+      width: 87.2vw;
+      height: 87.2vw;
+      margin-bottom: 6.93vw;
+      background: #c4c4c4;
+      border-radius: 1.06vw 1.06vw 0 0;
+    }
+    &__tag {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 1.82vw 3vw 1.3vw;
+      color: white;
+      font-family: $weight-700;
+      font-size: 3.73vw;
+      background: #333;
+      border-radius: 0.26vw;
+      z-index: 2;
+      &:after {
+        content: '+';
+        display: inline-block;
+        width: 2.93vw;
+        height: 2.93vw;
+        margin-left: 1.06vw;
+        color: #333;
+        font-size: 3.2vw;
+        line-height: 3.6vw;
+        text-align: center;
+        background: white;
+        border-radius: 50%;
+        vertical-align: top;
+      }
+    }
+    &__label {
+      padding: 0 1.6vw;
+      color: $ten;
+      font-family: $weight-700;
+      font-size: 3.2vw;
+      line-height: 5.86vw;
+    }
+    &__set-name {
+      padding: 0 1.6vw;
+      margin-bottom: 2.13vw;
+      color: #333;
+      font-family: $weight-700;
+      font-size: 6.66vw;
+      line-height: 8.26vw;
+    }
+    &__configuration {
+      padding: 0 1.6vw;
+      margin-bottom: 7.73vw;
+      color: #5C5C5C;
+      font-family: $weight-500;
+      font-size: 3.73vw;
+      line-height: 5.97vw;
+      letter-spacing: -0.26vw;
+      &--point {
+        background: #E6FFBF;
+        font-family: $weight-700;
+      }
+    }
+    &__list {
+      overflow: hidden;
+      position: relative;
+      padding: 4.53vw 4.26vw 5.6vw;
+      margin-bottom: 2.66vw;
+      background: rgba(245, 246, 247, 0.40);
+      border: 0.26vw solid rgba(17, 17, 17, 0.08);
+      border-radius: 2.13vw;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__old-price {
+      margin-bottom: 1.33vw;
+      color: #999;
+      font-family: $weight-500;
+      font-size: 3.2vw;
+      letter-spacing: -0.06vw;
+      text-decoration: line-through;
+    }
+    &__price {
+      display: flex;
+      align-items: end;
+      margin-bottom: 2.66vw;
+      color: $grey80;
+      font-family: $weight-700;
+      font-size: 4.53vw;
+    }
+    &__percent {
+      margin-left: 1.06vw;
+      color: $ten;
+      font-family: $weight-600;
+      font-size: 3.73vw;
+      letter-spacing: -0.07vw;
+    }
+    &__participate {
+      position: absolute;;
+      top: 3.73vw;
+      right: 4.26vw;
+      padding: 0.52vw 1.86vw 0.26vw;
+      color: $ten;
+      font-family: $weight-700;
+      font-size: 2.93vw;
+      line-height: 4.8vw;
+      background: rgba(255, 210, 220, 0.50);
+      border-radius: 1.06vw;
+    }
+    &__name {
+      font-family: $weight-600;
+      font-size: 3.46vw;
+      line-height: 4.26vw;
+    }
+    &__name__spacing{
+      margin-bottom: 4.53vw;
+    }
+  }
+  .btn-group {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 4.26vw;
+    bottom: 3.73vw;
+  }
+  .btn-basket {
+    min-width: 9.6vw;
+    padding: 2.4vw;
+    margin-right: 1.33vw;
+    border: 0.26vw solid $ten;
+    border-radius: 0.53vw;
+    background: white;
+    & > img {
+      width: 4.26vw;
+    }
+  }
+  .btn-buy {
+    min-width: 20.8vw;
+    padding: 3.61vw 0 3vw;
+    color: white;
+    font-family: $weight-700;
+    font-size: 3.46vw;
+    background: $ten;
+    border-radius: 0.53vw;
+  }
 }

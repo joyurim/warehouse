@@ -92,6 +92,55 @@
       </div>
     </article>
 
+    <article v-for="(set, setIndex) in setList" :key="setIndex" class="product" >
+      <div class="thumbnail">
+        <template v-if="setIndex === 0">
+          <img src="//webimage.10x10.co.kr/fixevent/event/2023/124554/m/product_setA.jpg?v=1.3/10x10/optimize" alt="">
+        </template>
+        <template v-if="setIndex === 1">
+          <img src="//webimage.10x10.co.kr/fixevent/event/2023/124554/m/product_setB.jpg?v=1.3/10x10/optimize" alt="">
+        </template>
+        <template v-if="setIndex === 2">
+          <img src="//webimage.10x10.co.kr/fixevent/event/2023/124554/m/product_setC.jpg?v=1.3/10x10/optimize" alt="">
+        </template>
+      </div>
+      <p class="product__label">SET 0{{setIndex+1}}</p>
+      <p class="product__set-name">푸덕 {{ setIndex === 0 ? '입문템 푸린세스' : setIndex === 1 ? '심화템 푸린이' : '만렙템 뚠빵이'}} 세트</p>
+      <div class="product__configuration">
+        <template v-if="setIndex === 0">
+          다이어리 + 탁상달력(+AR카드) + 포토카드 세트(4종) + 스티커 3종 세트 +
+          <span class="product__configuration--point">문진 + 네컷사진 2장 + 아크릴 키링</span>  + 특전 (랜덤 포토카드 부적)
+        </template>
+        <template v-if="setIndex === 1">
+          다이어리 + 탁상달력(+AR 카드) + 포토카드 세트(4종) + 스티커 3종 세트 +
+          <span class="product__configuration--point">스윙 아크릴 오브제 + 증명사진(+ID 카드) + 핸드폰 스트랩 키링 + 푸각 김밥 그립톡</span>  + 특전 (랜덤 포토카드 부적)
+        </template>
+        <template v-if="setIndex === 2">
+          다이어리 + 탁상달력(+AR 카드) + 포토카드 세트(4종) + 스티커 3종 세트 +
+          <span class="product__configuration--point">발바닥 키링 + 빅스티커 5종 세트 + 플립북 메모지 + 유리컵 + 쉬폰 포스터 + 벽걸이 포스터 달력</span>  + 특전 (랜덤 포토카드 부적)
+        </template>
+      </div>
+      <div
+          v-for="item in set"
+          :key="item.id"
+          :id="item.id"
+          class="product__list"
+      >
+        <div class="product__price">
+          {{item.price}}
+        </div>
+        <div class="product__name" :class="{'product__name__spacing': item.discountRate === 0}">
+          푸덕 {{ setIndex === 0 ? '입문템 푸린세스' : setIndex === 1 ? '심화템 푸린이' : '만렙템 뚠빵이'}} 세트
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn-basket">
+            <img src="//webimage.10x10.co.kr/fixevent/event/2023/124554/m/icon-basket.png/10x10/optimize" alt="장바구니">
+          </button>
+          <button type="button" class="btn-buy" >바로구매</button>
+        </div>
+      </div>
+    </article>
+
   </section>
 </template>
 
@@ -109,8 +158,12 @@ export default defineComponent({
   data() {
     return {
       totalQuantity: 1640,
-      updateCounting: 85260000,
       totalOrderUser: 1540,
+      startValue: 0,
+      endValue: 85260000,
+      duration: 2000,
+      updateCounting: 0,
+      totalAmount: 0,
       modules: [Autoplay],
       projectIntroduction: false,
       swiperList: [
@@ -119,11 +172,73 @@ export default defineComponent({
           '//webimage.10x10.co.kr/fixevent/event/2023/124554/m/slide03.jpg?v=1.2/10x10/optimize>',
           '//webimage.10x10.co.kr/fixevent/event/2023/124554/m/slide04.jpg?v=1.2/10x10/optimize'
       ],
+      setList: [
+        [
+          {
+            id: 5657681,
+            price: "49,000",
+          },
+        ],
+        [
+          {
+            id: 5657684,
+            price: "72,000",
+          },
+        ],
+        [
+          {
+            id: 5657687,
+            price: "98,000",
+          },
+        ],
+      ],
+      itemList: [],
     }
   },
-  mounted() {
+  async mounted() {
+    this.animateCount();
+    await this.getItemList();
   },
   methods: {
+    animateCount() {
+      const startTime = performance.now();
+      const animate = (currentTime) => {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / this.duration, 1);
+        this.updateCounting = Math.floor(this.startValue + (this.endValue - this.startValue) * progress);
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+      requestAnimationFrame(animate);
+    },
+    async getItemList() {
+      try {
+        const itemList = [
+          5657681, 5657680, 5657679, 5657684, 5657683, 5657682, 5657687,
+          5657686, 5657685,
+        ];
+        const response = await fetch(
+            "https://gateway.10x10.co.kr/v1/event/apis/event/items/list/recorded",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(itemList),
+            }
+        );
+        if (response.ok) {
+          const json = await response.json();
+
+          if (json.status === 200 && json.message === "success") {
+            this.itemList = json.result.itemsList;
+          }
+        }
+      } catch (e) {
+        console.error(e, 'error')
+      }
+    },
   }
 })
 </script>
