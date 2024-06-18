@@ -73,14 +73,6 @@ const workList = ref([
     participation: '퍼블 100%, 개발 30%',
     component: FubaoSeasonGreetings,
   },
-  {
-    type: '운영',
-    code: 'gift_sincerity',
-    popupTitle: '선물의 진심',
-    data: '2022.11.21 ~ 2023.12.05',
-    participation: '퍼블 100%, 개발 100%',
-    component: '',
-  },
 ]);
 
 const modalTitle = ref('');
