@@ -15,16 +15,8 @@ const routes = [
         component: () => import(/* webpackChunkName: "TenByTen" */ '../views/TenByTen.vue'),
     },
     {
-        path: '/screen-book',
-        component: () => import(/* webpackChunkName: "ScreenDesignBook" */ '../views/ScreenDesignBook.vue'),
-    },
-    {
         path: '/web-design',
         component: () => import(/* webpackChunkName: "WebDesign" */ '../views/WebDesign.vue'),
-    },
-    {
-        path: '/project',
-        component: () => import(/* webpackChunkName: "ProjectList" */ '../views/ProjectList.vue'),
     },
 ];
 
