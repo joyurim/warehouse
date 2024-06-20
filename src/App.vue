@@ -1,6 +1,5 @@
 <template>
   <main :class="{'web': isWebLayout}" class="mainContainer">
-<!--    <aside class="quickMenu">GO<br/>HOME</aside>-->
     <router-view />
   </main>
 </template>
