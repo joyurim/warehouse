@@ -49,8 +49,10 @@ export default defineComponent({
     return {
       navList: [
         { link: '/10x10', name: '텐텐추천', type: 'inManu' },
+        { link: '', name: '재입고', type: 'outManu' },
         { link: '', name: '프리오더', type: 'outManu' },
         { link: '', name: '팡금판매된', type: 'outManu' },
+        { link: '', name: '캐릭터월드', type: 'outManu' },
         { link: '', name: '선물의진심', type: 'outManu' },
         { link: '', name: '선물의참견', type: 'outManu' },
       ],
