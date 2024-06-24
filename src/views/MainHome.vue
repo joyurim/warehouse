@@ -46,15 +46,15 @@ export default defineComponent({
     return {
       menuList: [
         {
-          date: '2024.06 ~ 2024.07',
-          name: '리뉴얼 텐바이텐',
-          link: '/10x10',
-          type: 'inPage'
-        },
-        {
           date: '2022.11 ~ 2024.06',
           name: '최근 작업물 목록',
           link: '/work',
+          type: 'inPage'
+        },
+        {
+          date: '2024.06 ~ 2024.07',
+          name: '리뉴얼 텐바이텐',
+          link: '/10x10',
           type: 'inPage'
         },
         {

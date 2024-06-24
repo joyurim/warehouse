@@ -1,19 +1,4 @@
 $base-device-width: 375;
-// 소수점 자리수를 제한하는 함수
-@function round-to($value, $places: 2) {
-  $factor: 1;
-  @for $i from 1 through $places {
-    $factor: $factor * 10;
-  }
-  @return round($value * $factor) / $factor;
-}
-
-// px를 vw로 변환하는 함수
-@function pxToVw($px) {
-  $vw-value: ($px / $base-device-width) * 100;
-  $rounded-vw-value: round-to($vw-value, 2);
-  @return #{$rounded-vw-value}vw;
-}
 
 $ten : #ff214f;
 $tenDown : #D62727;
