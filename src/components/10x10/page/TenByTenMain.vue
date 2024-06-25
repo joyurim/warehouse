@@ -3,19 +3,14 @@
   <main class="today">
     <swiper
         :modules="modules"
-        :pagination="{
-          type: 'fraction',
-        }"
+        :pagination="{ type: 'fraction' }"
         :loop="false"
         :loopedSlides=1
-        :autoplay="{
-          delay: 2500,
-          disableOnInteraction: false,
-        }"
+        :autoplay="{ delay: 2500, disableOnInteraction: false }"
         :speed="500"
         class="todaySwiper"
     >
-      <swiper-slide v-for="(main, index) in mainRollingList" :key="index">
+      <swiper-slide v-for="(main, index) in mainRollingList" :key="`mainRollingIdx-`+index">
         <div class="todaySwiper__text">
           <p :style="{ backgroundColor: main.subTextBgColor }">{{main.subText}}</p>
           <h2 v-html="main.title" />
@@ -24,7 +19,7 @@
       </swiper-slide>
     </swiper>
     <ul class="gnb">
-      <li v-for="(gnb, index) in gnbList" :key="`gnblist-`+index">
+      <li v-for="(gnb, index) in gnbList" :key="`gnblistIdx-`+index">
         <a :href="gnb.href" target="_blank">
           <div class="gnb__img">
             <img :src="gnb.img" :alt="gnb.name">
@@ -44,6 +39,7 @@
         <ProductItem />
       </ul>
     </section>
+    <JustOneDay />
   </main>
 </template>
 
@@ -52,9 +48,10 @@ import {defineComponent} from 'vue'
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {Autoplay, Pagination} from "swiper/modules";
 import ProductItem from "@/components/10x10/common/ProductItem.vue";
+import JustOneDay from "@/components/10x10/main/JustOneDay.vue";
 export default defineComponent({
   name: "TenByTenMain",
-  components: {ProductItem, Swiper, SwiperSlide},
+  components: {JustOneDay, ProductItem, Swiper, SwiperSlide},
   data() {
     return {
       modules: [Autoplay, Pagination],
@@ -136,5 +133,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/tenbyten/tenbytenMain.scss";
+@import "@/styles/tenbyten/tenbytenMain";
 </style>

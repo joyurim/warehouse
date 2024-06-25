@@ -1,0 +1,10 @@
+.title {
+  display: flex;
+  align-items: center;
+  margin-bottom: pxToVw(16);
+  @include font(20,28,$weight-700);
+  letter-spacing: - pxToVw(0.5);
+}
+.layoutPadding {
+  padding: 0 pxToVw(16);
+}

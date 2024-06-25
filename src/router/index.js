@@ -17,27 +17,27 @@ const routes = [
             {
                 path: 'category',
                 name: 'TenByTenCategory',
-                component: () => import(/* webpackChunkName: "TenByTenCategory" */ '@/components/10x10/main/TenByTenCategory.vue'),
+                component: () => import(/* webpackChunkName: "TenByTenCategory" */ '@/components/10x10/page/TenByTenCategory.vue'),
             },
             {
                 path: 'mypage',
                 name: 'TenByTenMyPage',
-                component: () => import(/* webpackChunkName: "TenByTenMyPage" */ '@/components/10x10/main/TenByTenMyPage.vue'),
+                component: () => import(/* webpackChunkName: "TenByTenMyPage" */ '@/components/10x10/page/TenByTenMyPage.vue'),
             },
             {
                 path: '',
                 name: 'TenByTenMain',
-                component: () => import(/* webpackChunkName: "TenByTenMain" */ '@/components/10x10/main/TenByTenMain.vue'),
+                component: () => import(/* webpackChunkName: "TenByTenMain" */ '@/components/10x10/page/TenByTenMain.vue'),
             },
             {
                 path: 'wish',
                 name: 'TenByTenWish',
-                component: () => import(/* webpackChunkName: "TenByTenWish" */ '@/components/10x10/main/TenByTenWish.vue'),
+                component: () => import(/* webpackChunkName: "TenByTenWish" */ '@/components/10x10/page/TenByTenWish.vue'),
             },
             {
                 path: 'history',
                 name: 'TenByTenHistory',
-                component: () => import(/* webpackChunkName: "TenByTenHistory" */ '@/components/10x10/main/TenByTenHistory.vue'),
+                component: () => import(/* webpackChunkName: "TenByTenHistory" */ '@/components/10x10/page/TenByTenHistory.vue'),
             }
         ]
     },
