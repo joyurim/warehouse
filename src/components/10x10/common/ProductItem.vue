@@ -219,10 +219,18 @@ export default {
   },
   computed: {
     limitedItems() {
-      return this.itemList.slice(0, this.itemLimit);
+      return this.shuffleArray(this.itemList).slice(0, this.itemLimit);
     }
   },
   methods: {
+    shuffleArray(array) {
+      const shuffledArray = array.slice();
+      for (let i = shuffledArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+      }
+      return shuffledArray;
+    },
     numberFormat(price) {
       const floorPrice = Math.floor(price);
       return floorPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
