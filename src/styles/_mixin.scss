@@ -10,3 +10,19 @@
 @mixin font($size, $line-height:1.25, $weight) {
   font: pxToVw($size) / pxToVw($line-height) $weight;
 }
+
+@mixin customScrollbar {
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}

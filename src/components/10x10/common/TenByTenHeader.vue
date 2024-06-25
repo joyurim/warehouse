@@ -78,19 +78,7 @@ export default {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   white-space: nowrap;
-  &::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
+  @include customScrollbar;
   &__menu {
     display: flex;
     flex-wrap: nowrap;
@@ -110,7 +98,7 @@ export default {
       a {
         display: block;
         color: $grey60;
-        font: pxToVw(14) / pxToVw(20) $weight-500;
+        @include font(14,20,$weight-500);
         &.router-link-active {
           color: $grey80;
         }
