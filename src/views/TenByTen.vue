@@ -1,11 +1,9 @@
 <template>
   <div class="wrapper">
     <TenByTenHeader />
-    <main>
-      <transition :name="transitionName">
-        <router-view></router-view>
-      </transition>
-    </main>
+    <transition :name="transitionName">
+      <router-view></router-view>
+    </transition>
     <TabBar />
   </div>
 </template>
@@ -50,5 +48,4 @@ export default defineComponent({
 .slide-right-enter, .slide-right-leave-to {
   transform: translateX(-100%);
 }
-@import "@/styles/tenbyten/tenbytenMain.scss";
 </style>

@@ -1,6 +1,6 @@
 
 <template>
-  카테고리
+  <main>카테고리</main>
 </template>
 
 <script>

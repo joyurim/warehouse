@@ -178,3 +178,13 @@ input[type = 'text'] {
     overflow-y: auto;
   }
 }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100svh;
+  > main {
+    flex: 1;
+    overflow-y: auto;
+  }
+}

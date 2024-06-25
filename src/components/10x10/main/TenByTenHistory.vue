@@ -1,6 +1,6 @@
 
 <template>
-  히스토리
+  <main>히스토리</main>
 </template>
 
 <script>

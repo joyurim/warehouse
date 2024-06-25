@@ -1,5 +1,5 @@
 <template>
-  위시 리스트
+  <main>위시리스트</main>
 </template>
 
 <script>

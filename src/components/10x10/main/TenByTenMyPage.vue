@@ -1,6 +1,6 @@
 
 <template>
-  마이페이지
+  <main>마이페이지</main>
 </template>
 
 <script>
