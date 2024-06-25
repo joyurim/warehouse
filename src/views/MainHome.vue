@@ -77,7 +77,6 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .main-intro {
-  background: linear-gradient(179.76deg, rgba(0, 0, 0, 0) 21.59%, rgba(162, 162, 162, 0.2) 99.79%), #FFFFFF;
   &__text {
     padding: pxToVw(45) pxToVw(24);
     > h1 {
@@ -143,6 +142,59 @@ export default defineComponent({
         }
         &:nth-of-type(3){
           margin-right: pxToVw(13);
+        }
+      }
+    }
+  }
+}
+.web {
+  .main-intro {
+    width: 750px;
+    margin: 0 auto;
+    background: white;
+    border: 2px solid;
+    &__text {
+      padding: 50px 48px;
+      > h1 {
+        margin-bottom: 32px;
+        font: 68px / 76px $weight-700;
+      }
+      > p {
+        font: 28px / 1.5 $weight-500;
+      }
+      p.main-intro__text--noti {
+        margin-top: 70px;
+        font-size: 26px;
+      }
+    }
+  }
+  .menu {
+    padding-bottom: 60px;
+    &__container {
+      width: 686px;
+      > li {
+        height: 320px;
+        margin-bottom: 28px;
+        border: 2px solid black;
+        border-radius: 16px;
+        > a {
+          padding: 0 50px;
+          .date {
+            padding: 8px 16px 4px;
+            margin-bottom: 24px;
+            border-radius: 4px;
+            font-size: 22px;
+          }
+          .title {
+            font-size: 48px;
+          }
+        }
+        &:nth-of-type(3),
+        &:nth-of-type(4) {
+          width: 330px;
+        }
+        &:nth-of-type(3){
+          margin-right: 26px;
         }
       }
     }
