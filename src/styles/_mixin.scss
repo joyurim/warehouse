@@ -1,4 +1,12 @@
 @mixin thumbnail($width, $height) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: pxToVw($width);
   height: pxToVw($height);
+  background: $grey10;
+}
+@mixin font($size, $line-height:1.25, $weight) {
+  font: pxToVw($size) / pxToVw($line-height) $weight;
 }
