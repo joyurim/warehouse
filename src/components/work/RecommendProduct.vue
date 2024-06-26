@@ -25,11 +25,8 @@
               <span class="price">{{numberFormat(recentItem.price)}}</span>
             </p>
             <div v-if="recentItem.reviewCount" class="review">
-              <div class="review__eval">
-                <span class="review__eval--sprite-rating" :style="'width:' + (recentItem.reviewScore*20) + '%;'" />
-              </div>
               <span class="review__count">
-                ({{numberFormat(recentItem.reviewCount)}})
+               4.5
               </span>
             </div>
             <p v-if="recentItem.reviewCount" class="review__comment">
@@ -66,14 +63,6 @@
                 <span v-if="item.discountText" class="percent">{{item.discountText}}</span>
                 <span class="price">{{numberFormat(item.price)}}</span>
               </p>
-              <div v-if="item.reviewCount" class="review">
-                <div class="reviewEval">
-                  <span class="reviewEvalSpriteRating" :style="'width:' + (item.reviewScore*20) + '%;'" />
-                </div>
-                <span class="reviewCount">
-               {{numberFormat(item.reviewCount)}}
-            </span>
-              </div>
             </div>
           </div>
         </div>

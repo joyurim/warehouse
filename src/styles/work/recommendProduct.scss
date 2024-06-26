@@ -24,7 +24,6 @@
     font: 4.26vw / 5.86vw $weight-700;
   }
 }
-
 .recommend {
   display: flex;
   flex-direction: column;
@@ -152,39 +151,6 @@
       }
     }
   }
-  .review {
-    &__eval {
-      display: inline-block;
-      width: 16vw;
-      height: 3.2vw;
-      background-image: url("@/assets/common/reviewStar.png");
-      background-repeat: repeat-x;
-      background-size: 3.2vw 6.4vw;
-      overflow: hidden;
-      &--sprite-rating {
-        display: inline-block;
-        height: 3.2vw;
-        background-image: url("@/assets/common/reviewStar.png");
-        background-repeat: repeat-x;
-        background-position: 0 104%;
-        background-size: 3.2vw 6.4vw;
-      }
-    }
-    &__count {
-      font-size: 2.93vw;
-      color: $grey60;
-      vertical-align: text-bottom;
-    }
-    &__comment {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      word-break: break-all;
-      max-width: 41.6vw;
-      color: $grey60;
-      font: 2.93vw / 4.26vw $weight-400;
-    }
-  }
   .btnRecentMore {
     width: 91.46vw;
     padding: 4.26vw 0 3.2vw;
@@ -251,6 +217,123 @@
         color: $grey80;
         font: 4.8vw /6.93vw $weight-700;
         letter-spacing: -0.19vw;
+      }
+    }
+  }
+}
+.webLayout {
+  .error {
+    .image-container {
+      width: 300px;
+      margin: 150px auto 40px;
+    }
+    &__message {
+      margin-bottom: 20px;
+      font-size: 32px;
+      line-height: 1.25;
+    }
+    .btnHome {
+      width: 300px;
+      padding: 20px 0 16px;
+      border-radius: 8px;
+      font: 20px / 38px $weight-700;
+    }
+  }
+  .recommend {
+    &__title {
+      margin-bottom: 64px;
+      font: 48px / 64px $weight-700;
+      &--sponsored {;
+        padding-bottom: 22px;
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+    .recent {
+      margin-bottom: 50px;
+      &__container {
+        padding: 48px 32px 84px;
+        margin-bottom: 32px;
+      }
+      .thumbnail {
+        margin-right: 24px;
+        width: 350px;
+        height: 350px;
+        border-radius: 8px;
+      }
+      .priceBox {
+        margin-bottom: 8px;
+      }
+      .recent-info {
+        .brand {
+          margin-top: 8px;
+          font: 24px / 36px $weight-500;
+        }
+        .name {
+          margin-bottom: 32px;
+          font: 26px / 36px $weight-500;
+        }
+        .originPrice {
+          font: 24px / 36px $weight-500;
+          letter-spacing: -0.1px;
+        }
+        .percent {
+          margin-right: 8px;
+          font: 26px / 32px $weight-700;
+          letter-spacing: -0.19px;
+        }
+        .price {
+          font: 36px / 52px $weight-700;
+          letter-spacing: -0.19px;
+        }
+      }
+    }
+    .btnRecentMore {
+      width: 654px;
+      padding: 32px 0 24px;
+      border-radius: 8px;
+      font: 16px / 44px $weight-700;
+      letter-spacing: -0.4px;
+    }
+    .together{
+      &__container {
+        padding: 48px 32px 84px;
+      }
+      &__product-container {
+        gap: 64px 30px;
+      }
+      &__product {
+        width: 328px;
+        .thumbnail {
+          width: 328px;
+          height: 328px;
+          margin-bottom: 8px;
+        }
+        .brand {
+          margin-bottom: 8px;
+          font: 26px / 36px $weight-500;
+        }
+        .name {
+          margin-bottom: 16px;
+          font: 28px / 40px $weight-500;
+        }
+        .originPrice {
+          font: 22px / 32px $weight-500;
+          letter-spacing: -0.1px;
+        }
+        .priceBox {
+          margin-bottom: 16px;
+        }
+        .percent {
+          margin-right: 4px;
+          font: 32px / 52px $weight-700;
+          letter-spacing: -0.19px;
+        }
+        .price {
+          color: $grey80;
+          font: 32px / 52px $weight-700;
+          letter-spacing: -0.19px;
+        }
       }
     }
   }
