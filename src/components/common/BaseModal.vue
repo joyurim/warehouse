@@ -1,5 +1,5 @@
 <template>
-  <teleport to="body">
+  <teleport to="#app">
     <Transition name="modal">
       <div v-if="modelValue" class="modal" @click="close">
         <div class="modal__container" @click.stop>
@@ -77,6 +77,15 @@ const close = () => {
   &__body {
     flex: 1;
     overflow-y: auto;
+  }
+}
+.web {
+  .modal {
+    &__container {
+      width: 375px;
+      height: 900px;
+      background: white;
+    }
   }
 }
 .modal-enter-from .modal-container,

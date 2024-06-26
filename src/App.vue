@@ -1,22 +1,30 @@
 <template>
-  <main :class="{'web': isWebLayout}" class="mainContainer">
     <router-view />
-  </main>
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
-const isWebLayout = ref(false);
+const isWebLayout = ref(window.innerWidth >= 750);
+
 const checkIfWeb = () => {
   isWebLayout.value = window.innerWidth >= 750;
+  const appDiv = document.getElementById('app');
+
+  if (isWebLayout.value) {
+    appDiv.classList.add('webLayout');
+  } else {
+    appDiv.classList.remove('webLayout');
+  }
 };
+
 onMounted(() => {
-  checkIfWeb();
   window.addEventListener('resize', checkIfWeb);
+  checkIfWeb();
 });
 onBeforeUnmount(() => {
   window.removeEventListener('resize', checkIfWeb);
 });
+
 </script>
 
 <style lang="scss">

@@ -1,41 +1,61 @@
 <template>
-  <div class="main-intro">
-    <div class="main-intro__text">
-      <h1>Portfolio</h1>
-      <p>
-        안녕하세요,<br/>
-        사용자 편의를 위한 UI 설계와 디자인,<br/>
-        퍼블리싱 및 개발경험을 가진 조유림입니다.<br/><br/>
-        저는 직관적이고 아름다운 인터페이스를<br/>
-        설계하고 구현하는 데 열정을 가지고 있습니다.<br/>
-        다양한 프로젝트를 통해 쌓은 경험을 바탕으로<br/>
-        사용자와 고객 모두가 만족할 수 있는<br/>
-        결과물을 제공하기 위해 노력하고 있습니다.<br/><br/>
-        제 포트폴리오에서 저의 작업과 역량을 확인해 보세요.
-      </p>
-      <p class="main-intro__text--noti">
-        제 포트폴리오는 모바일 전용으로 만들어졌습니다.<br/>
-        F12 > 모바일 모드로 봐주세요!
-      </p>
-    </div>
-    <nav class="menu">
-      <ul class="menu__container">
-        <li v-for="nav in menuList" :key="nav.name">
-          <template v-if="nav.type === 'inPage'">
-            <router-link :to="nav.link">
-              <div v-if="nav.date" class="date">{{nav.date}}</div>
-              <div class="title">{{nav.name}}</div>
-            </router-link>
-          </template>
-          <template v-if="nav.type === 'outPage'">
-            <a :href="nav.link" target="_blank">
-              <div class="title">{{nav.name}}</div>
-            </a>
-          </template>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <main class="profile">
+    <header class="profile__header">
+      <h1>
+        <router-link to="/" class="logo">
+          <img src="@/assets/common/logo.svg" alt="홈으로 가기">
+        </router-link>
+      </h1>
+      <nav class="menu">
+        <ul class="menu__container">
+          <li v-for="nav in menuList" :key="nav.name">
+            <template v-if="nav.type === 'inPage'">
+              <router-link :to="nav.link">
+                {{nav.name}}
+              </router-link>
+            </template>
+            <template v-if="nav.type === 'outPage'">
+              <a :href="nav.link" target="_blank">
+                {{nav.name}}
+              </a>
+            </template>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="profile__content">
+      <div class="profileIntro">
+        <figure class="profileIntro__photo">
+          <img src="@/assets/common/profile-me.png" alt="프로필 사진">
+        </figure>
+        <div class="profileIntro__text">
+          <h2>
+            사용자 편의를 고려하는<br/>
+            <strong>UI 설계와 디자인, 퍼블리싱 및 개발</strong><br/>
+            경험을 가진 조유림입니다.
+          </h2>
+          <p>
+            저는 직관적이고 아름다운 인터페이스를 설계하고 구현하는 데 열정을 가지고 있습니다.
+            다양한 프로젝트를 통해 쌓은 경험을 바탕으로 사용자와 고객 모두가 만족할 수 있는
+            결과물을 제공하기 위해 노력하고 있습니다.<br/>
+            제 포트폴리오에서 저의 작업과 역량을 확인해 보세요.
+          </p>
+        </div>
+      </div>
+      <div class="history">
+        <h3>주요 참여 프로젝트</h3>
+        <div class="history__container">
+          <dl v-for="(history, index) in historyList" :key="`historyIdx-`+index">
+            <dt>{{ history.year }}</dt>
+            <dd>
+              <h4>{{ history.company }}</h4>
+              <p v-html="history.project" />
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
 </template>
 
 <script >
@@ -46,29 +66,35 @@ export default defineComponent({
     return {
       menuList: [
         {
-          date: '2022.11 ~ 2024.06',
-          name: '최근 작업물 목록',
+          name: 'Work',
           link: '/work',
           type: 'inPage'
         },
         {
-          date: '2024.06 ~ 2024.07',
-          name: '리뉴얼 텐바이텐',
+          name: 'Renewal',
           link: '/10x10',
           type: 'inPage'
         },
         {
-          date: '',
-          name: '디자인',
+          name: 'Design',
           link: '/web-design',
           type: 'inPage'
         },
         {
-          date: '',
           name: 'gitHub',
           link: 'https://github.com/joyurim/warehouse',
           type: 'outPage'
         },
+      ],
+      historyList: [
+        { year: '2024', company: '텐바이텐', project: '광고 상품 영역 퍼블리싱 및 개발<br/>광고 상품 연결 추천 퍼블리싱 및 개발<br/>Admin 광고 예산 설정 퍼블리싱 및 개발' },
+        { year: '2023', company: '텐바이텐', project: '렌더링 속도 개선을 위한 CSS 파일 분리<br/>페이지별 UI/UX 디자인 고도화<br/>react, style component 기반 사이트 리뉴얼 정기 이벤트 작업' },
+        { year: '2022', company: '애버커스', project: 'LG U+ 데이터레이크 구축 - 가명처리<br/>LG AI 스마트 레이더 지원<br/>LG AI Engine Gateway<br/>LG U+ 로봇 관제/관리 플랫폼 고도화' },
+        { year: '2021', company: '애버커스', project: 'LG U+ 데이터레이크 구축 - 분석과제<br/>LG U+ O2O 매장 마이크로 사이트 모바일<br/>서울특별시 스마트 컨트렉트 플랫폼 - 관리자<br/>Abacus CallFlow 고도화<br/>LG AI 스마트 레이더 지원<br/>LG U+ 로봇 관제/관리 시스템 구축<br/>LG U+ 데이터마켓 플레이스 고도화' },
+        { year: '2020', company: '애버커스', project: 'LG CNS Homin 플랫폼 구축<br/>LG U+ O2O 매장 마이크로 사이트 구축<br/>LG U+ 콘텐츠 관리 효율화 프로젝트<br/>Abacus Dev Tools 사이트 구축<br/>LG U+ 데이터마켓 플레이스 구축' },
+        { year: '2019', company: '애버커스', project: '금호 석유 화학 HR 사이트 고도화<br/>LG 화학 외국환 신고관리 시스템 구축<br/>현대중공업 UI Framework' },
+        { year: '2015 ~ 2018', company: '테스트굿', project: '홈페이지 고도화 디자인 및 퍼블리싱<br/>운영업무 전반 및 정기 이벤트<br/>아로니아 오리지날 브랜드 사이트 기획 및 디자인, 퍼블리싱<br/>청라 지역포털 모바일 디자인 및 퍼블리싱<br/>캄보디아 리워드어플 메인 디자인 및 퍼블리싱<br/>캄보디아 개발자 대상 기본 퍼블리싱 교육' },
+        { year: '2011 ~ 2015', company: '투두쇼핑', project: '투두쇼핑 정기 이벤트 디자인<br/>온라인 미용 아카데미 강의 페이지 디자인'}
       ]
     }
   },
@@ -76,128 +102,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.main-intro {
-  &__text {
-    padding: pxToVw(45) pxToVw(24);
-    > h1 {
-      margin-bottom: pxToVw(16);
-      color: black;
-      font: pxToVw(34) / normal $weight-700;
-    }
-    > p {
-      color: black;
-      font: pxToVw(14) / 1.5 $weight-400;
-    }
-    > p.main-intro__text--noti {
-      margin-top: pxToVw(35);
-      color: #777;
-      font-size: pxToVw(13);
-      letter-spacing: -.4px;
-    }
-  }
-  .menu {
-    padding-bottom: pxToVw(90);
-    box-sizing: border-box;
-    &__container {
-      width: pxToVw(343);
-      margin: 0 auto;
-      > li {
-        width: 100%;
-        height: pxToVw(160);
-        margin-bottom: pxToVw(14);
-        border: pxToVw(2) solid black;
-        box-sizing: border-box;
-        border-radius: pxToVw(8);
-        background: #F9F9F9;
-        > a {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          width: 100%;
-          height: 100%;
-          padding: 0 pxToVw(25);
-          box-sizing: border-box;
-          .date {
-            width: fit-content;
-            padding: pxToVw(4) pxToVw(8) pxToVw(2);
-            margin-bottom: pxToVw(12);
-            background: black;
-            border-radius: pxToVw(2);
-            color: white;
-            font: pxToVw(11) / normal $weight-400;
-          }
-          .title {
-            color: black;
-            font: pxToVw(24) / normal $weight-700;
-          }
-        }
-        &:nth-of-type(3),
-        &:nth-of-type(4) {
-          display: inline-block;
-          width: pxToVw(165);
-          margin-bottom: 0;
-          > a {
-            align-items: center;
-          }
-        }
-        &:nth-of-type(3){
-          margin-right: pxToVw(13);
-        }
-      }
-    }
-  }
-}
-.web {
-  .main-intro {
-    width: 750px;
-    margin: 0 auto;
-    background: white;
-    border: 2px solid;
-    &__text {
-      padding: 50px 48px;
-      > h1 {
-        margin-bottom: 32px;
-        font: 68px / 76px $weight-700;
-      }
-      > p {
-        font: 28px / 1.5 $weight-500;
-      }
-      p.main-intro__text--noti {
-        margin-top: 70px;
-        font-size: 26px;
-      }
-    }
-  }
-  .menu {
-    padding-bottom: 60px;
-    &__container {
-      width: 686px;
-      > li {
-        height: 320px;
-        margin-bottom: 28px;
-        border: 2px solid black;
-        border-radius: 16px;
-        > a {
-          padding: 0 50px;
-          .date {
-            padding: 8px 16px 4px;
-            margin-bottom: 24px;
-            border-radius: 4px;
-            font-size: 22px;
-          }
-          .title {
-            font-size: 48px;
-          }
-        }
-        &:nth-of-type(3),
-        &:nth-of-type(4) {
-          width: 330px;
-        }
-        &:nth-of-type(3){
-          margin-right: 26px;
-        }
-      }
-    }
-  }
-}
+@import "@/styles/home/mainHome.scss";
 </style>
