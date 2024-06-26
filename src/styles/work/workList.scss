@@ -1,0 +1,93 @@
+.content {
+  .event {
+    display: flex;
+    flex-direction: column;
+    gap: pxToVw(16) 0;
+    padding: 0 pxToVw(16) pxToVw(20);
+    background: $grey10;
+    &__list {
+      position: relative;
+      padding: pxToVw(20);
+      border: pxToVw(1) solid $grey20;
+      border-radius: pxToVw(8);
+      background: white;
+      box-shadow: 0 pxToVw(2) pxToVw(6) $grey20;
+      &--type {
+        position: absolute;
+        top: pxToVw(20);
+        right: pxToVw(20);
+        display: inline-block;
+        padding: pxToVw(3) pxToVw(5) pxToVw(1);
+        font: pxToVw(12) / 1.5 $weight-500;
+        border-radius: pxToVw(8);
+      }
+      .badge-event {
+        color: #0802cd;
+        background: #edf5ff;
+      }
+      .badge-page {
+        color: #008883;
+        background: #dcfffd;
+      }
+      &--title {
+        margin-bottom: pxToVw(4);
+        font: pxToVw(16) / 1.5 $weight-600;
+        letter-spacing: -0.2vw;
+      }
+      &--description {
+        color: $grey60;
+        font: pxToVw(13) / 1.5 $weight-500;
+        letter-spacing: -0.15vw;
+      }
+    }
+  }
+}
+.webLayout {
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .content {
+    padding: 60px 20px 94px;
+    .title {
+      padding-left: 10px;
+      font: 30px / 48px $weight-700;
+    }
+    .discretion {
+      padding-left: 10px;
+      margin-bottom: 16px;
+      font: 18px / 32px $weight-500;
+      letter-spacing: -0.5px;
+    }
+    .event {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 0;
+      &__list {
+        padding: 20px;
+        border-width: 1px;
+        border-radius: 20px;
+        &:hover {
+          border-color: $ten;
+          cursor: pointer;
+        }
+        &--type {
+          top: 20px;
+          right: 20px;
+          padding: 2px 10px 1px;
+          font: 13px / 18px $weight-500;
+        }
+        &--title {
+          margin-bottom: 4px;
+          font: 18px / 32px $weight-700;
+          letter-spacing: -0.5px;
+        }
+        &--description {
+          font: 18px / 32px $weight-400;
+          letter-spacing: -0.5px;
+        }
+      }
+    }
+  }
+}

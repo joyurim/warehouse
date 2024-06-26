@@ -1,28 +1,6 @@
 <template>
   <main class="profile">
-    <header class="profile__header">
-      <h1>
-        <router-link to="/" class="logo">
-          <img src="@/assets/common/logo.svg" alt="홈으로 가기">
-        </router-link>
-      </h1>
-      <nav class="menu">
-        <ul class="menu__container">
-          <li v-for="nav in menuList" :key="nav.name">
-            <template v-if="nav.type === 'inPage'">
-              <router-link :to="nav.link">
-                {{nav.name}}
-              </router-link>
-            </template>
-            <template v-if="nav.type === 'outPage'">
-              <a :href="nav.link" target="_blank">
-                {{nav.name}}
-              </a>
-            </template>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <PortfolioHeader />
     <section class="profile__content">
       <div class="profileIntro">
         <figure class="profileIntro__photo">
@@ -60,32 +38,12 @@
 
 <script >
 import {defineComponent} from 'vue'
+import PortfolioHeader from "@/components/common/PortfolioHeader.vue";
 export default defineComponent({
   name: "MainHome",
+  components: {PortfolioHeader},
   data() {
     return {
-      menuList: [
-        {
-          name: 'Work',
-          link: '/work',
-          type: 'inPage'
-        },
-        {
-          name: 'Renewal',
-          link: '/10x10',
-          type: 'inPage'
-        },
-        {
-          name: 'Design',
-          link: '/web-design',
-          type: 'inPage'
-        },
-        {
-          name: 'gitHub',
-          link: 'https://github.com/joyurim/warehouse',
-          type: 'outPage'
-        },
-      ],
       historyList: [
         { year: '2024', company: '텐바이텐', project: '광고 상품 영역 퍼블리싱 및 개발<br/>광고 상품 연결 추천 퍼블리싱 및 개발<br/>Admin 광고 예산 설정 퍼블리싱 및 개발' },
         { year: '2023', company: '텐바이텐', project: '렌더링 속도 개선을 위한 CSS 파일 분리<br/>페이지별 UI/UX 디자인 고도화<br/>react, style component 기반 사이트 리뉴얼 정기 이벤트 작업' },

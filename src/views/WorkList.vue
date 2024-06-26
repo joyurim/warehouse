@@ -1,8 +1,9 @@
 <template>
-  <div class="layout">
-    <h1 class="layout__header">주요 작업물</h1>
-    <p class="layout__discretion">최근 근무한 10x10에서 작업한 모바일 작업물입니다.</p>
-    <div class="layout__content">
+  <main class="wrapper">
+    <PortfolioHeader />
+    <section class="content">
+      <h2 class="title">주요 작업물</h2>
+      <p class="discretion">최근 근무한 10x10에서 작업한 모바일 작업물입니다.</p>
       <ul class="event">
         <li v-for="event in workList" :key="event.code" class="event__list" @click="openModal(event)">
           <span
@@ -19,8 +20,8 @@
       <BaseModal :popupTitle="modalTitle" v-model:modelValue="showModal">
         <component :is="selectedComponent" />
       </BaseModal>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 
 <script setup>
@@ -30,6 +31,7 @@ import RecommendProduct from '@/components/work/RecommendProduct.vue';
 import PreOrderList from "@/components/work/PreOrderList.vue";
 import TenTenSale from "@/components/work/22ndSale/TenTenSale.vue";
 import FubaoSeasonGreetings from "@/components/work/FubaoSeasonGreetings.vue";
+import PortfolioHeader from "@/components/common/PortfolioHeader.vue";
 
 const showModal = ref(false);
 const workList = ref([
@@ -87,46 +89,5 @@ const openModal = (event) => {
 </script>
 
 <style scoped lang="scss">
-.event {
-  display: flex;
-  flex-direction: column;
-  gap: pxToVw(16) 0;
-  padding: 0 pxToVw(16) pxToVw(20);
-  background: $grey10;
-  &__list {
-    position: relative;
-    padding: pxToVw(20);
-    border: pxToVw(1) solid $grey20;
-    border-radius: pxToVw(8);
-    background: white;
-    box-shadow: 0 pxToVw(2) pxToVw(6) $grey20;
-    &--type {
-      position: absolute;
-      top: pxToVw(20);
-      right: pxToVw(20);
-      display: inline-block;
-      padding: pxToVw(3) pxToVw(5) pxToVw(1);
-      font: pxToVw(12) / 1.5 $weight-500;
-      border-radius: pxToVw(8);
-    }
-    .badge-event {
-      color: #0802cd;
-      background: #edf5ff;
-    }
-    .badge-page {
-      color: #008883;
-      background: #dcfffd;
-    }
-    &--title {
-      margin-bottom: pxToVw(4);
-      font: pxToVw(16) / 1.5 $weight-600;
-      letter-spacing: -0.2vw;
-    }
-    &--description {
-      color: $grey60;
-      font: pxToVw(13) / 1.5 $weight-500;
-      letter-spacing: -0.15vw;
-    }
-  }
-}
+@import "@/styles/work/workList.scss";
 </style>

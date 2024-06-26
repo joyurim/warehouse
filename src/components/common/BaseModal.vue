@@ -79,12 +79,26 @@ const close = () => {
     overflow-y: auto;
   }
 }
-.web {
+.webLayout {
   .modal {
     &__container {
-      width: 375px;
+      width: 750px;
       height: 900px;
       background: white;
+    }
+    &__header {
+      padding: 9px 16px 5px;
+      border: 1px solid $grey30;
+      h1 {
+        font-size: 18px;
+        line-height: 26px;
+      }
+      &--close {
+        display: flex;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 3px;
+      }
     }
   }
 }
