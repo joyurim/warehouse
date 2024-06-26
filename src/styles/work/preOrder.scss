@@ -119,3 +119,53 @@
     }
   }
 }
+
+.webLayout {
+  .container {
+    padding-bottom: 80px;
+    &__banner {
+      margin-bottom: 66px;
+    }
+  }
+  .preorder {
+    &__img {
+      min-height: 480px;
+      .close {
+        &:after {
+          top: 40px;
+          left: 40px;
+          padding: 5px 8px 4px;
+          border-radius: 3px;
+          font-size: 16px;
+        }
+      }
+    }
+    &__list {
+      margin-bottom: 64px;
+      &:nth-of-type(odd) .preorder__img {
+        margin-left: 48px;
+        border-radius: 40px 0 0 40px;
+
+      }
+      &:nth-of-type(even) .preorder__img {
+        margin-right: 64px;
+        border-radius: 0 40px 40px 0;
+      }
+    }
+    &__title {
+      width: 622px;
+      margin: 32px 16px 16px 64px;
+      font-size: 40px;
+    }
+    &__benefit {
+      margin-left: 62px;
+      &--discount {
+        margin-right: 12px;
+        font-size: 28px;
+      }
+      &--badge {
+        margin-right: 12px;
+      }
+    }
+  }
+}
