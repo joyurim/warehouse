@@ -12,14 +12,6 @@ article {
   flex-direction: column;
   position: relative;
   background: white;
-  .summer__group-link {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.56vw 1.6vw;
-    padding: 15.46vw 7.46vw;
-    background: url("@/assets/event/SummerPhrases/summer__link--bg.jpg") repeat top left / cover;
-  }
-
   .summer-item {
     width: 100%;
     padding: 18.4vw 6.6vw 14.26vw;
@@ -201,5 +193,128 @@ article {
     width: 3.2vw;
     height: 3.2vw;
     z-index: 100;
+  }
+}
+
+.webLayout {
+  .summer {
+    .summer-item {
+      padding: 140px 50px 106px;
+      &__thumbnail {
+        width: 652px;
+        height: 780px;
+        margin: 0 auto 100px;
+      }
+      &__mark {
+        top: -8px;
+        left: -16px;
+        width: 250px;
+        height: 210px;
+      }
+
+      &__name {
+        margin-bottom: 44px;
+        font: 68px / 1.25 $weight-800;
+        letter-spacing: -0.5px;
+      }
+
+      &__info {
+        margin-bottom: 38px;
+      }
+
+      &__org-price {
+        font: 36px / 1.5 $weight-600;
+        letter-spacing: -0.1px;
+
+        &:before {
+          top: 19px;
+          right: -14px;
+          width: 12px;
+          height: 1px;
+        }
+
+        &:after {
+          top: 23px;
+          left: -1px;
+          width: 126px;
+          height: 1px;
+        }
+      }
+
+      &__price {
+        padding: 0 12px 0 19px;
+        font: 50px / 1.5 $weight-600;
+        letter-spacing: -0.1px;
+
+        &--discount {
+          font: 40px / 1.5 $weight-600;
+          letter-spacing: -0.1px;
+        }
+      }
+
+      &__text {
+        margin-bottom: 70px;
+        font: 32px / 1.5 $weight-400;
+        letter-spacing: -0.1px;
+      }
+
+      &__buy {
+        width: 578px;
+      }
+    }
+  }
+  .comment-write {
+    &__box {
+      padding: 720px 40px 188px;
+      font: 70px / 1.75 $weight-800;
+      letter-spacing: -0.5px;
+      input[type='text'] {
+        width: 287px;
+        height: 76px;
+        padding: 28px 28px 20px;
+        margin-right: 24px;
+        font: 32px / 1.5 $weight-700;
+      }
+      &--entrance {
+        width: 672px;
+        margin: 0 auto 710px;
+      }
+    }
+  }
+  .summer__comment-read {
+    padding: 11.73vw 0 14.66vw;
+    &--title {
+      width: 66.66vw;
+      margin-bottom: 9.6vw;
+    }
+    &--grid {
+      gap: 3.73vw 2.4vw;
+    }
+    .summer-comment__list {
+      width: 43.46vw;
+      height: 37.33vw;
+      font: 2.93vw / 1.5 $weight-400;
+      strong {
+        width: 30vw;
+        font: 4vw / 1.25 $weight-700;
+      }
+    }
+    .summer-comment__delete {
+      top: 5.82vw;
+      right: 5.63vw;
+      width: 2.66vw;
+      height: 2.66vw;
+    }
+  }
+  .summer__floating {
+    top:  130px;
+    right: 50%;
+    width: 160px;
+    height: 160px;
+    margin-right: -350px;
+    &--close {
+      width: 48px;
+      height: 48px;
+    }
   }
 }

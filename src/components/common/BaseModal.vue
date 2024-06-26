@@ -82,6 +82,7 @@ const close = () => {
 .webLayout {
   .modal {
     &__container {
+      position: relative;
       width: 750px;
       height: 900px;
       background: white;
