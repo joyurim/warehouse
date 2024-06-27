@@ -367,7 +367,6 @@
     vertical-align: sub;
   }
 }
-
 .lottery {
   width: 100%;
   padding: 13.33vw 0;
@@ -413,7 +412,6 @@
 .original {
   animation: 25s linear 0s infinite normal forwards running rollingoriginal;
 }
-
 .clone {
   animation: 25s linear 0s infinite normal none running rollingclone;
 }
@@ -635,6 +633,320 @@
     &--point {
       color: #FF2DAB;
       font-family: $weight-800;
+    }
+  }
+}
+
+
+.webLayout {
+  .year22 {
+    .tabs {
+      > li {
+        height: 100px;
+        padding-top: 30px;
+        font-size: 32px;
+      }
+    }
+    .sticky {
+      width: 750px;
+      top: 106px;
+      > li {
+        cursor: pointer;
+      }
+    }
+  }
+  .intro {
+    &__left {
+      left: 72px;
+      width: 330px;
+    }
+    &__right {
+      top: 236px;
+      width: 420px;
+    }
+    &__percent {
+      top: 250px;
+      left: 28px;
+      width: 136px;
+      height: 136px;
+    }
+  }
+  .benefit22 {
+    padding: 100px 32px;
+    &__title-wrap {
+      margin-bottom: 50px;
+      > img {
+        width: 136px;
+        margin-bottom: 50px;
+      }
+      > p {
+        margin-bottom: 10px;
+        font-size: 32px;
+      }
+    }
+    &__title {
+      font-size: 70px;
+    }
+    &__container {
+      gap: 20px;
+    }
+    &__list {
+      width: 325px;
+      > img {
+        height: 350px;
+        border-radius: 10px;
+      }
+      &--title {
+        padding: 20px 24px 14px 30px;
+        font-size: 32px;
+        border-radius: 10px;
+        &:after {
+          width: 34px;
+          height: 34px;
+        }
+      }
+    }
+  }
+  .hbd {
+    padding: 60px 0 42px 52px;
+    &__title {
+      margin-bottom: 10px;
+      font-size: 42px;
+    }
+    &__more {
+      font-size: 28px;
+      &:after {
+        width: 32px;
+        height: 32px;
+        margin-left: -1px;
+      }
+    }
+  }
+  .special {
+     .brand__item {
+      right: 40px;
+      width: 240px;
+    }
+  }
+  .banner {
+    width: 708px;
+    height: 160px;
+    padding: 40px 50px 32px;
+    border-radius: 20px;
+    &__sub {
+      font-size: 28px;
+    }
+    &__title {
+      font-size: 36px;
+      &:after {
+        top: 4px;
+        right: -34px;
+        width: 32px;
+        height: 32px;
+      }
+      &--xl {
+        margin-bottom: 32px;
+        font-size: 70px;
+      }
+    }
+    &__deco {
+      margin-bottom: 6px;
+      font-size: 32px;
+      letter-spacing: -0.04px;
+    }
+  }
+  .pinpay {
+    margin: 100px auto 0;
+    &__logo {
+      width: 120px;
+    }
+    &__item {
+      bottom: 18px;
+      right: 68px;
+      width: 184px;
+    }
+  }
+  .koongya {
+    padding-top: 70px;
+    .banner {
+      margin: 0 auto 100px;
+    }
+    &__item {
+      bottom: 18px;
+      right: 32px;
+      width: 248px;
+    }
+  }
+  .sanrio {
+    padding: 100px 0;
+    .banner__deco {
+      margin-bottom: 6px;
+      font-size: 36px;
+      letter-spacing: -0.4px;
+    }
+    &__product {
+      padding: 0 32px;
+    }
+  }
+  .special__brand {
+    margin: 0 auto 100px;
+  }
+  .luckydraw {
+    padding-top: 100px;
+    .banner {
+      margin: 0 auto 70px;
+    }
+    &__item {
+      right: 40px;
+      width: 240px;
+    }
+  }
+  .dakku {
+    padding: 100px 0;
+    &__inner {
+      &:before {
+        top: 102px;
+        left: -76px;
+        width: 898px;
+        height: 750px;
+      }
+    }
+    &__prouuct {
+      width: 610px;
+      margin: 0 90px 0 53px;
+    }
+  }
+  .goodnote {
+    margin: 100px auto;;
+    &__item {
+      bottom: 14px;
+      right: 32px;
+      width: 303px;
+    }
+  }
+  .btn__more {
+    width: 550px;
+    height: 120px;
+    margin: 48px auto 0;
+    font-size: 32px;
+    line-height: 1.5;
+    border-radius: 10px;
+    &:after {
+      width: 33px;
+      height: 33px;
+      margin-left: 4px;
+    }
+  }
+  .lottery {
+    padding: 100px 0;
+    .banner__title--xl {
+      margin-bottom: 6px;
+    }
+    &__img {
+      width: 548px;
+      margin: 0 auto 36px;
+    }
+  }
+  .raffle {
+    padding: 100px 0;
+    &__container {
+      width: 750px;
+      margin: 50px auto 12px;
+    }
+    &__inner {
+      > img {
+        width: 280px;
+        height: 316px;
+        margin: 0 10px;
+      }
+    }
+  }
+  .goods {
+    padding: 100px 0;
+    &:before,
+    &:after {
+      height: 227px;
+    }
+    .banner__title--xl {
+      padding-bottom: 414px;
+    }
+  }
+
+  .hbd22nd {
+    padding: 100px 0;
+    .banner__title--xl {
+      margin-bottom: 36px;
+
+    }
+    &__text {
+      padding-bottom: 498px;
+      font-size: 30px;
+    }
+  }
+  .newbenefit {
+    margin: 100px auto;
+    &__item {
+      bottom: 10px;
+      right: 48px;
+      width: 196px;
+    }
+  }
+  .sale22nd {
+    padding: 50px 32px 86px;
+    .banner__title--xl{
+      margin-bottom: 50px;
+      font-size: 60px;
+    }
+    .product__list {
+      width: 332px;
+      padding-bottom: 60px;
+    }
+    .thumbnail {
+      height: 332px;
+      margin-bottom: 16px;
+    }
+    .product-info {
+      &__org-price {
+        font-size: 24px;
+        letter-spacing: -0.06px;
+      }
+      &__price {
+        font-size: 40px;
+        letter-spacing: -0.12px;
+      }
+      &__price--discount {
+        font-size: 26px;
+      }
+    }
+    .product__name {
+      height: 60px;
+      font-size: 22px;
+    }
+    .sale22nd__more {
+      font-size: 36px;
+      &:after {
+        width: 34px;
+        height: 34px;
+        margin-left: -0.6px;
+      }
+    }
+  }
+  .best22nd {
+    height: 84px;
+    padding: 20px 0 32px;
+  }
+  .alarm {
+    padding: 64px 0 50px;
+    &:before {
+      width: 470px;
+      height: 476px;
+    }
+    &__img {
+      width: 324px;
+    }
+    &__text {
+      padding: 28px 0 12px;
+      font-size: 30px;
     }
   }
 }
