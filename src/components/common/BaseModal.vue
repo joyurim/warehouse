@@ -5,7 +5,7 @@
         <div class="modal__container" @click.stop>
           <div class="modal__header">
             <h1>{{ popupTitle }}</h1>
-            <button class="modal__header--close" @click="close">
+            <button class="modal__header--close" @click.stop="close">
               <img src="@/assets/common/icon-close.svg" alt="팝업 닫기">
             </button>
           </div>

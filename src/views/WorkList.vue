@@ -5,7 +5,8 @@
       <h2 class="title">주요 작업물</h2>
       <p class="discretion">최근 근무한 10x10에서 작업한 모바일 작업물입니다.</p>
       <ul class="event">
-        <li v-for="event in workList" :key="event.code" class="event__list" @click="openModal(event)">
+        <li v-for="event in workList" :key="event.code" class="event__list"
+            @click="openModal(event)">
           <span
               class="event__list--type"
               :class="{'badge-event': event.type === '이벤트', 'badge-page': event.type === '운영'}"
@@ -81,7 +82,11 @@ const modalTitle = ref('');
 const selectedComponent = ref(null);
 
 const openModal = (event) => {
+  window.addEventListener('popstate', function() {
+      showModal.value = false;
+  });
   showModal.value = true;
+  history.pushState({popupOpen: true}, '');
   modalTitle.value = event.popupTitle;
   selectedComponent.value = event.component;
 };
