@@ -17,10 +17,10 @@
           <p class="event__list--description">{{ event.participation }} 참여</p>
         </li>
       </ul>
-      <BaseModal :popupTitle="modalTitle" v-model:modelValue="showModal">
-        <component :is="selectedComponent" />
-      </BaseModal>
     </section>
+    <BaseModal :popupTitle="modalTitle" v-model:modelValue="showModal">
+      <component :is="selectedComponent" />
+    </BaseModal>
   </main>
 </template>
 

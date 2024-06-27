@@ -1,11 +1,11 @@
 <template>
-  <div class="wrapper">
+  <main class="wrapper">
     <TenByTenHeader />
     <transition :name="transitionName">
       <router-view></router-view>
     </transition>
     <TabBar />
-  </div>
+  </main>
 </template>
 
 <script >
