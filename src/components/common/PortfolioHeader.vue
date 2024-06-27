@@ -84,21 +84,17 @@ export default {
 }
 .webLayout {
   .header {
-    margin: 70px 4px 0 10px;
+    margin: pxToVw(18, 750) pxToVw(16, 750) 0;
     .logo {
-      width: 22px;
-      height: 26px;
-      margin-bottom: 13px;
+      width: pxToVw(17, 750);
+      height: pxToVw(37, 750);
     }
     .menu {
-      padding-bottom: 5px;
+      padding-bottom: pxToVw(5, 750);
       &__container {
-        gap: 0 10px;
+        gap: 0 pxToVw(15, 750);
         a {
-          font: 18px / 26px $weight-500;
-          &:hover {
-            color: $ten;
-          }
+          @include font(14, 20, $weight-500, 750);
         }
       }
     }

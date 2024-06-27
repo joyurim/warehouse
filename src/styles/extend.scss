@@ -13,7 +13,11 @@
   font: pxToVw(14)/ pxToVw(20)x $weight-500;
   letter-spacing: -0.5px;
 }
+.today {
+  .title {
 
+  }
+}
 .webLayout {
   .pageTitle {
     padding-top: 0;
@@ -26,15 +30,10 @@
     font: 18px / 32px $weight-500;
     letter-spacing: -0.5px;
   }
-}
-
-
-.today {
-  .title {
-    display: flex;
-    align-items: center;
-    margin-bottom: pxToVw(16);
-    @include font(20,28,$weight-700);
-    letter-spacing: - pxToVw(0.5);
+  .layoutPadding {
+    padding: 0 pxToVw(16, 1200);
   }
 }
+
+
+

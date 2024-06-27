@@ -8,7 +8,7 @@
 }
 
 // px를 vw로 변환하는 함수
-@function pxToVw($px) {
+@function pxToVw($px, $base-device-width: 375) {
   $vw-value: ($px / $base-device-width) * 100;
   $rounded-vw-value: round-to($vw-value, 2);
   @return #{$rounded-vw-value}vw;

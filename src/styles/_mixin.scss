@@ -1,16 +1,16 @@
-@mixin thumbnail($width, $height) {
+@mixin thumbnail($width, $height, $base-device-width: 375) {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: pxToVw($width);
-  height: pxToVw($height);
+  width: pxToVw($width, $base-device-width);
+  height: pxToVw($height, $base-device-width);
   background: $grey10;
 }
-@mixin font($size, $line-height:1.25, $weight) {
-  font: pxToVw($size) / pxToVw($line-height) $weight;
-}
 
+@mixin font($size, $line-height: 1.25, $weight, $base-device-width: 375) {
+  font: pxToVw($size, $base-device-width) / pxToVw($line-height, $base-device-width) $weight;
+}
 @mixin customScrollbar {
   &::-webkit-scrollbar {
     width: 0;

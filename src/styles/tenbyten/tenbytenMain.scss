@@ -69,7 +69,11 @@
   .recommend {
     margin-bottom: pxToVw(60);
     &__title {
-      @extend .title;
+      display: flex;
+      align-items: center;
+      margin-bottom: pxToVw(16);
+      @include font(20,28,$weight-700);
+      letter-spacing: - pxToVw(0.5);
       @extend .layoutPadding;
       align-items: flex-end;
       justify-content: space-between;
@@ -102,7 +106,10 @@
   .justOneDay {
     margin-bottom: pxToVw(60);
     &__title {
-      @extend .title;
+      display: flex;
+      align-items: center;
+      @include font(20,28,$weight-700);
+      letter-spacing: - pxToVw(0.5);
       justify-content: space-between;
       @extend .layoutPadding;
       margin-bottom: pxToVw(16);
@@ -183,6 +190,146 @@
       }
       :deep(.swiper-pagination-progressbar-fill) {
         background: $green;
+      }
+    }
+  }
+}
+
+.todayPc {
+  .today {
+    .todaySwiper {
+      .swiper-slide {
+        height: pxToVw(300, 1200);
+      }
+      &__text {
+        padding: pxToVw(34, 1200) pxToVw(25, 1200);
+        > p {
+          padding: pxToVw(2, 1200) pxToVw(8, 1200) 0;
+          margin-bottom: pxToVw(12, 1200);
+          font: 14px / 24px $weight-700;
+        }
+        > h2 {
+          font: 30px / 38px $weight-700;
+          text-shadow: 0 0 pxToVw(4, 1200) rgba(0, 0, 0, 0.25);
+        }
+      }
+      :deep(.swiper-pagination) {
+        right: pxToVw(16, 1200);
+        bottom: pxToVw(16, 1200);
+        padding: pxToVw(4, 1200) pxToVw(12, 1200) pxToVw(1, 1200);
+        border-radius: pxToVw(20, 1200);
+        font: 12px / 18px $weight-700;
+        letter-spacing: -0.5px;
+      }
+    }
+    .gnb {
+      gap: pxToVw(10, 1200);
+      padding: 0 pxToVw(16, 1200);
+      margin: pxToVw(24, 1200) 0 pxToVw(42, 1200);
+      &__img {
+        margin-bottom: pxToVw(8, 1200);
+      }
+      &__name {
+        font: 14px / 20px $weight-400;
+        letter-spacing: - pxToVw(0.9, 1200);
+      }
+    }
+    .recommend {
+      margin-bottom: pxToVw(60, 1200);
+      &__title {
+        margin-bottom: pxToVw(16, 1200);
+        font: 20px / 28px $weight-700;
+        letter-spacing: - pxToVw(0.5, 1200);
+        @extend .layoutPadding;
+        &--sponsored {
+          padding-bottom: pxToVw(2, 1200);
+          font: 11px / 11px $weight-400;
+        }
+      }
+      &__container {
+        gap: pxToVw(24, 1200) pxToVw(10, 1200);
+        :deep {
+          .item {
+            &:first-of-type,
+            &:nth-of-type(8) {
+              margin-left: pxToVw(16, 1200);
+            }
+            &:nth-of-type(7),
+            &:last-of-type {
+              margin-right: pxToVw(16, 1200);
+            }
+          }
+        }
+      }
+    }
+    .justOneDay {
+      margin-bottom: pxToVw(60, 1200);
+      &__title {
+        @include font(20,28,$weight-700, 1200);
+        letter-spacing: - pxToVw(0.5, 1200);
+        @extend .layoutPadding;
+        margin-bottom: pxToVw(16, 1200);
+        > h2 {
+          @include font(20,28,$weight-700, 1200);
+        }
+      }
+      .countDown {
+        &__icon {
+          width: pxToVw(18, 1200);
+          height: pxToVw(18, 1200);
+          margin: 0 pxToVw(4, 1200) pxToVw(2, 1200) 0;
+        }
+        &__time {
+          @include font(16,24,$weight-500, 1200)
+        }
+      }
+      &__swiper {
+        .swiper-slide {
+          width: pxToVw(325, 1200);
+          &:first-of-type {
+            margin-left: pxToVw(16, 1200);
+          }
+          &:last-of-type {
+            margin-right: pxToVw(16, 1200);
+          }
+        }
+        .thumbnail {
+          @include thumbnail(325, 178, 1200);
+          margin-bottom: pxToVw(8, 1200);
+        }
+        .name {
+          margin-bottom: pxToVw(4, 1200);
+          @include font(16,24,$weight-500, 1200);
+          letter-spacing: - pxToVw(0.09, 1200);
+        }
+        .priceBox {
+          padding-bottom: pxToVw(42, 1200);
+          .percent {
+            margin-right: pxToVw(4, 1200);
+            @include font(16, 24, $weight-700, 1200);
+            letter-spacing: - pxToVw(0.09, 1200);
+          }
+          .price {
+            margin-right: pxToVw(4, 1200);
+            @include font(16, 24, $weight-700, 1200);
+            letter-spacing: - pxToVw(0.09, 1200);
+            > span {
+              @include font(14, 20, $weight-600, 1200);
+            }
+          }
+          .orgPrice {
+            @include font(12,18,$weight-600, 1200);
+            letter-spacing: - pxToVw(0.09, 1200);
+            > span {
+              @include font(12, 18, $weight-500, 1200);
+            }
+          }
+        }
+        :deep(.swiper-pagination) {
+          left: pxToVw(16, 1200);
+          width: pxToVw(343, 1200);
+          height: pxToVw(2, 1200);
+        }
       }
     }
   }

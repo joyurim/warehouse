@@ -309,4 +309,53 @@ export default {
     }
   }
 }
+.webLayout {
+  .item {
+    width: pxToVw(150, 1200);
+    &__thumbnail {
+      @include thumbnail(150, 150, 1200);
+      margin-bottom: pxToVw(8, 1200);
+    }
+    &__brand {
+      @include font(14,20,$weight-700, 1200);
+      letter-spacing: - pxToVw(0.05, 1200);
+    }
+    &__name {
+      margin-bottom: pxToVw(8, 1200);
+      @include font(14,20,$weight-500, 1200);
+      letter-spacing: - pxToVw(0.09, 1200);
+    }
+    &__orgPrice {
+      @include font(12,18,$weight-500, 1200);
+      letter-spacing: - pxToVw(0.09, 1200);
+    }
+    &__priceBox {
+      .percent {
+        margin-right: pxToVw(4, 1200);
+        @include font(15,20,$weight-700, 1200);
+        letter-spacing: - pxToVw(0.09, 1200);
+      }
+      .price {
+        @include font(15,20,$weight-700, 1200);
+        letter-spacing: - pxToVw(0.09, 1200);
+      }
+    }
+    .review {
+      margin-top: pxToVw(8, 1200);
+      &__eval {
+        width: pxToVw(60, 1200);
+        height: pxToVw(12, 1200);
+        background-size: pxToVw(12, 1200) pxToVw(12, 1200);
+        &--rating {
+          height: pxToVw(12, 1200);
+          background-size: pxToVw(12, 1200) pxToVw(12, 1200);
+        }
+      }
+      &__count {
+        margin-left: pxToVw(4, 1200);
+        @include font(11,16,$weight-400, 1200);
+      }
+    }
+  }
+}
 </style>

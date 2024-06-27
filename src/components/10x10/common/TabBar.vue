@@ -38,4 +38,16 @@ export default {
     }
   }
 }
+.todayPc {
+  .tabBar {
+    padding: pxToVw(6, 1200) pxToVw(8, 1200);
+    border-top: pxToVw(1, 1200) solid $grey20;
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
 </style>

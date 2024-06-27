@@ -54,19 +54,23 @@ export default {
   background-color: white;
   border-bottom: pxToVw(1) solid $grey20;
   &__logo {
-    .logo {
-      width: pxToVw(100);
-      height: auto;
-      vertical-align: middle;
+    a {
+      display: flex;
+      .logo {
+        width: pxToVw(100);
+        height: auto;
+        vertical-align: middle;
+      }
     }
   }
   &__actions {
     display: flex;
     gap: 0 pxToVw(12);
-
     button {
-      background: none;
-      border: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
       width: pxToVw(24);
       height: pxToVw(24);
@@ -101,6 +105,41 @@ export default {
         @include font(14,20,$weight-500);
         &.router-link-active {
           color: $grey80;
+        }
+      }
+    }
+  }
+}
+.todayPc {
+  .header {
+    padding: pxToVw(12, 1200) pxToVw(16, 1200);
+    border-bottom: pxToVw(1, 1200) solid $grey20;
+    &__logo {
+      .logo {
+        width: pxToVw(100, 1200);
+      }
+    }
+    &__actions {
+      gap: 0 pxToVw(12, 1200);
+      button {
+        width: pxToVw(24, 1200);
+        height: pxToVw(24, 1200);
+      }
+    }
+  }
+  .nav {
+    &__menu {
+      padding: pxToVw(13, 1200) 0 pxToVw(11, 1200);
+      gap: 0 pxToVw(14, 1200);
+      .nav__item {
+        &:first-of-type {
+          padding-left: pxToVw(16, 1200);
+        }
+        &:last-of-type {
+          padding-right: pxToVw(16, 1200);
+        }
+        a {
+          font: 16px / 24px $weight-500;
         }
       }
     }

@@ -30,5 +30,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/tenbyten/tenbytenMain";
+
 </style>
