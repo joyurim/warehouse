@@ -84,7 +84,7 @@ const close = () => {
     &__container {
       position: relative;
       width: 750px;
-      height: 900px;
+      height: 80%;
       background: white;
     }
     &__header {
