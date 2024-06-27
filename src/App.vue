@@ -2,29 +2,29 @@
     <router-view />
 </template>
 
-<script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
-const isWebLayout = ref(window.innerWidth >= 750);
-
-const checkIfWeb = () => {
-  isWebLayout.value = window.innerWidth >= 750;
-  const appDiv = document.getElementById('app');
-
-  if (isWebLayout.value) {
-    appDiv.classList.add('webLayout');
-  } else {
-    appDiv.classList.remove('webLayout');
+<script>
+import {defineComponent} from 'vue'
+import { useLayoutStore } from './store/layoutStore';
+export default defineComponent({
+  name: 'App',
+  data() {
+    return {
+      layoutStore: useLayoutStore(),
+    };
+  },
+  mounted() {
+    window.addEventListener('resize', this.checkIfWeb);
+    this.checkIfWeb();
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkIfWeb);
+  },
+  methods: {
+    checkIfWeb() {
+      this.layoutStore.checkIfWeb();
+    }
   }
-};
-
-onMounted(() => {
-  window.addEventListener('resize', checkIfWeb);
-  checkIfWeb();
 });
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', checkIfWeb);
-});
-
 </script>
 
 <style lang="scss">
