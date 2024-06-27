@@ -150,22 +150,26 @@ input[type = 'text'] {
     background: #F6F6F6;
     font-size: pxToVw(14);
     line-height: 1.25;
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      height: 100svh;
+      .content{
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+    }
     &.webLayout {
       font-size: 28px;
+      .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
     }
     .router-link-active {
       color: $ten;
     }
-  }
-}
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-  height: 100svh;
-  .content{
-    flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
   }
 }

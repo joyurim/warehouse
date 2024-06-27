@@ -1,14 +1,10 @@
+@import '@/styles/extend.scss';
 .content {
   .title {
-    padding-top: pxToVw(20);
-    padding-left: pxToVw(20);
-    font: pxToVw(28) / pxToVw(38) $weight-700;
+    @extend .pageTitle;
   }
   .discretion {
-    padding-left: pxToVw(20);
-    margin-bottom: pxToVw(8);
-    font: pxToVw(14)/ pxToVw(20)x $weight-500;
-    letter-spacing: -0.5px;
+    @extend .pageDiscretion;
   }
   .event {
     display: flex;
@@ -54,22 +50,13 @@
   }
 }
 .webLayout {
-  .wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
   .content {
     padding: 60px 20px 94px;
     .title {
-      padding-top: 0;
-      padding-left: 10px;
-      font: 30px / 48px $weight-700;
+      @extend .pageTitle;
     }
     .discretion {
-      padding-left: 10px;
-      margin-bottom: 16px;
-      font: 18px / 32px $weight-500;
-      letter-spacing: -0.5px;
+      @extend .pageDiscretion;
     }
     .event {
       display: grid;
