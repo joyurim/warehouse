@@ -6,6 +6,9 @@
       </a>
     </div>
     <div class="header__actions">
+      <router-link to="/" class="header__actions--home" @click="goBack">
+        go Back
+      </router-link>
       <button class="header__search-button" aria-label="Search">
         <img src="@/assets/tenbyten/common/search-icon.svg" alt="Search">
       </button>
@@ -29,7 +32,8 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from 'vue';
+export default defineComponent({
   data() {
     return {
       navList: [
@@ -42,8 +46,13 @@ export default {
         { link: '', name: '선물의참견', type: 'outManu' },
       ],
     };
+  },
+  methods: {
+    goBack() {
+      this.$router.go(-1); // 이전 페이지로 이동
+    }
   }
-}
+});
 </script>
 <style scoped lang="scss">
 .header {
@@ -66,6 +75,22 @@ export default {
   &__actions {
     display: flex;
     gap: 0 pxToVw(12);
+    &--home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: pxToVw(2) pxToVw(10) pxToVw(1);
+      border: 1px solid $grey60;
+      border-radius: pxToVw(20);
+      &:after {
+        content: '';
+        display: inline-block;
+        width: pxToVw(12);
+        height: pxToVw(12);
+        margin-left: pxToVw(2);
+        background: url("@/assets/tenbyten/common/arrow-right-icon.svg") no-repeat center center / 100% ;
+      }
+    }
     button {
       display: flex;
       flex-direction: column;
@@ -121,6 +146,15 @@ export default {
     }
     &__actions {
       gap: 0 pxToVw(12, 1200);
+      &--home {
+        padding: pxToVw(2, 1200) pxToVw(10, 1200) pxToVw(1, 1200);
+        border-radius: pxToVw(20, 1200);
+        &:after {
+          width: pxToVw(12, 1200);
+          height: pxToVw(12, 1200);
+          margin-left: pxToVw(2, 1200);
+        }
+      }
       button {
         width: pxToVw(24, 1200);
         height: pxToVw(24, 1200);
