@@ -199,7 +199,7 @@
   .today {
     .todaySwiper {
       .swiper-slide {
-        height: pxToVw(300, 1200);
+        height: 100%;
       }
       &__text {
         padding: pxToVw(34, 1200) pxToVw(25, 1200);
