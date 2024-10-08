@@ -30,17 +30,17 @@ export default {
     return {
       menuList: [
         {
-          name: 'Work',
+          name: '작업물',
           link: '/work',
           type: 'inPage'
         },
         {
-          name: 'Renewal',
+          name: '리뉴얼',
           link: '/10x10',
           type: 'inPage'
         },
         {
-          name: 'Design',
+          name: '기획 및 디자인',
           link: '/web-design',
           type: 'inPage'
         },
@@ -84,13 +84,15 @@ export default {
 }
 .webLayout {
   .header {
-    margin: pxToVw(18, 750) pxToVw(16, 750) 0;
+    margin: pxToVw(18, 750) 0 0;
     .logo {
       width: pxToVw(17, 750);
       height: pxToVw(37, 750);
+      margin-left: pxToVw(8, 750);
     }
     .menu {
       padding-bottom: pxToVw(5, 750);
+      margin-right: pxToVw(8, 750);
       &__container {
         gap: 0 pxToVw(15, 750);
         a {

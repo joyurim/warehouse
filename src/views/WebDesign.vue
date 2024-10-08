@@ -2,8 +2,8 @@
   <div class="wrapper">
     <PortfolioHeader />
     <section class="design content">
-      <h1 class="title">웹 디자인 작업</h1>
-      <p class="discretion">웹 디자이너로 근무 시 작업한 디자인 포트폴리오입니다.</p>
+      <h1 class="title">디자인 및 기획 작업</h1>
+      <p class="discretion">디자이너로 근무 시 작업한 디자인 및 기획 포트폴리오입니다.</p>
       <div class="design">
         <a
             href="https://www.figma.com/design/756YAflEL7tiK3zEoBPWLQ/Style-Guide?node-id=0-1&t=UbCwXkCoKWRWiXkZ-0"
@@ -16,6 +16,17 @@
             텐바이텐에서 재직하며 디자인 시스템을 정리하고 페이지별 UI를 고도화한 디자인 파일입니다.
             해당 작업을 통해 일관된 사용자 경험을 제공하고, 효율적인 디자인 프로세스를 구축했습니다. 각 페이지의 UI를 세부적으로 개선하여 사용자 친화적인 인터페이스를 구현했습니다.
             제 디자인 파일을 통해 텐바이텐의 디자인 시스템과 UI 고도화 작업을 확인해 보세요.
+          </p>
+        </a>
+        <a
+            href="https://www.figma.com/design/HkDkMxWEVeUICKU18Jg4uJ/%EA%B8%B0%ED%9A%8D-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4?node-id=3-3&m=dev&t=RuecCEuYutMdKP7H-1"
+            target="_blank"
+            class="design__list"
+        >
+          <img src="@/assets/web/proposal.jpg" alt="B2B 기획 포트폴리오">
+          <p class="design__list--title">기획 포트폴리오</p>
+          <p class="design__list--description">
+            기획에 참여했던 프로젝트명, 기간, 기획시 고려했던 사항, 프로젝트 종료 후 느낀점 들을 작성했습니다.
           </p>
         </a>
         <a
@@ -33,7 +44,7 @@
             디자인나스와 ND클래스 과정에서는 사이트 기획부터 디자인까지 전 과정을 직접 담당하여,
             창의적이고 사용자가 만족할 수 있는 결과물을 완성했습니다.
           </p>
-        </a>
+        </a>        
       </div>
     </section>
   </div>
@@ -61,8 +72,9 @@ export default defineComponent({
     @extend .layoutPadding;
     padding-bottom: 60px;
     &__list {
-      &:first-child {
-        margin-bottom: pxToVw(32);
+      margin-bottom: pxToVw(32);
+      &:last-of-type {
+        margin-bottom: 0;
       }
       > img {
         width: pxToVw(343);
@@ -89,33 +101,35 @@ export default defineComponent({
     padding: 60px 20px 94px;
     .title {
       @extend .pageTitle;
+      padding: 0;
     }
     .discretion {
       @extend .pageDiscretion;
+      padding: 0;;
     }
     .design {
       display: grid;
-      gap: 32px;
-      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
       padding: 0;
       &__list {
         width: 100%;
         margin-bottom: 0;
         > img {
           width: inherit;
-          height: 300px;
-          margin-bottom: 16px;
-          border-radius: 16px;
+          height: 200px;
+          margin-bottom: 8px;
+          border-radius: 0;
         }
         &--title {
           padding: 0 4px;
           margin-bottom: 8px;
-          font: 24px / 1.5 $weight-600;
+          font: 18px / 1.5 $weight-600;
           letter-spacing: -0.2px;
         }
         &--description {
           padding: 0 4px;
-          font: 20px / 1.5 $weight-500;
+          font: 14px / 1.5 $weight-500;
           letter-spacing: -0.15px;
         }
       }
