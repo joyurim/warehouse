@@ -60,5 +60,5 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import "@/styles/home/mainHome.scss";
+@import "../styles/home/mainHome.scss"
 </style>

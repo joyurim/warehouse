@@ -96,7 +96,9 @@ export default {
       &__container {
         gap: 0 pxToVw(15, 750);
         a {
-          @include font(14, 20, $weight-500, 750);
+          padding-bottom: 8px;
+          font: 16px / 14px $weight-500;
+          letter-spacing: -1px;
         }
       }
     }
