@@ -19,7 +19,7 @@
           </p>
         </a>
         <a
-            href="https://www.figma.com/proto/C2wo4ZoBj74xAkeQ92BB86/UI-UX-%EC%9E%91%EC%97%85%EB%AC%BC-%EC%9B%90%EB%B3%B8?node-id=2-7045&t=s9CtYuUzOjEfTiYB-1"
+            href="https://www.figma.com/design/C2wo4ZoBj74xAkeQ92BB86/UI-UX-%EC%9E%91%EC%97%85%EB%AC%BC-%EC%9B%90%EB%B3%B8?node-id=2-7035&t=s9CtYuUzOjEfTiYB-1"
             target="_blank"
             class="design__list"
         >
