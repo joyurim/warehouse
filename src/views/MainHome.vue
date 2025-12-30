@@ -45,6 +45,9 @@ export default defineComponent({
   data() {
     return {
       historyList: [
+        {
+          year: '2025', company: '애버커스 프리랜서', project: 'LG U+ Customer360+ 고도화<br/>LG U+ 데이터레이크 DMP 프로젝트 고도화<br/>LG U+ SA 프로젝트 기능추가<br/>롯데카드 AI 플랫폼 신규구축'
+        },
         { year: '2024', company: '텐바이텐', project: '광고 상품 영역 퍼블리싱 및 개발<br/>광고 상품 연결 추천 퍼블리싱 및 개발<br/>Admin 광고 예산 설정 퍼블리싱 및 개발' },
         { year: '2023', company: '텐바이텐', project: '렌더링 속도 개선을 위한 CSS 파일 분리<br/>페이지별 UI/UX 디자인 고도화<br/>react, style component 기반 사이트 리뉴얼 정기 이벤트 작업' },
         { year: '2022', company: '애버커스', project: 'LG U+ 데이터레이크 구축 - 가명처리<br/>LG AI 스마트 레이더 지원<br/>LG AI Engine Gateway<br/>LG U+ 로봇 관제/관리 플랫폼 고도화' },
